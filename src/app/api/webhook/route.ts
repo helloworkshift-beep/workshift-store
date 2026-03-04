@@ -74,15 +74,21 @@ async function sendTelegramNotification(amount: number, currency: string, email:
   });
 }
 
-async function sendCourseAccessEmail(email: string, name: string) {
-  const { createHmac: hmac } = await import("crypto");
-  const COURSE_SECRET = process.env.DOWNLOAD_SECRET || "fallback-secret";
-  const payload = `course:${email}:${Date.now()}`;
-  const sig = hmac("sha256", COURSE_SECRET).update(payload).digest("hex");
-  const token = Buffer.from(`${payload}:${sig}`).toString("base64url");
+async function createEnrollment(email: string, productSlug: string, sessionId: string, amountCents: number) {
+  if (!process.env.NEXT_PUBLIC_SUPABASE_URL || !process.env.SUPABASE_SERVICE_ROLE_KEY) return;
+  const { createServiceClient } = await import("@/lib/supabase/server");
+  const supabase = createServiceClient();
+  await supabase.from("enrollments").upsert({
+    email,
+    product_slug: productSlug,
+    stripe_session_id: sessionId,
+    amount_cents: amountCents,
+  }, { onConflict: "stripe_session_id" });
+}
 
+async function sendCourseAccessEmail(email: string, name: string) {
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://workshift.store";
-  const accessUrl = `${baseUrl}/course/access?token=${token}`;
+  const accessUrl = `${baseUrl}/course/access`;
 
   const html = `<!DOCTYPE html>
 <html>
@@ -245,8 +251,9 @@ export async function POST(req: NextRequest) {
     if (email) {
       try {
         if (productInfo.type === "course") {
+          await createEnrollment(email, productInfo.slug, sessionId, amount);
           await sendCourseAccessEmail(email, name);
-          console.log(`Course access email sent to ${email}`);
+          console.log(`Course enrollment created + access email sent to ${email}`);
         } else {
           await sendDownloadEmail(
             email,

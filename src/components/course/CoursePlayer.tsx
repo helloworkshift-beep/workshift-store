@@ -122,16 +122,45 @@ export default function CoursePlayer({ modules, currentModule, currentLesson, ch
   const [sidebarOpen, setSidebarOpen] = useState(true);
 
   useEffect(() => {
+    // Load progress from localStorage (synced to Supabase when available)
     const saved = localStorage.getItem("workshift-progress");
     if (saved) setProgress(JSON.parse(saved));
     const savedExercise = localStorage.getItem(`exercise-${currentLesson}`);
     if (savedExercise) setExerciseText(savedExercise);
+
+    // Sync from Supabase if available
+    async function syncProgress() {
+      try {
+        const { createClient } = await import("@/lib/supabase/client");
+        const supabase = createClient();
+        const { data: { user } } = await supabase.auth.getUser();
+        if (!user) return;
+        const { data } = await supabase.from("progress").select("lesson_id").eq("user_id", user.id);
+        if (data && data.length > 0) {
+          const remote: Record<string, boolean> = {};
+          data.forEach((r: { lesson_id: string }) => { remote[r.lesson_id] = true; });
+          setProgress(remote);
+          localStorage.setItem("workshift-progress", JSON.stringify(remote));
+        }
+      } catch {}
+    }
+    syncProgress();
   }, [currentLesson]);
 
-  const markComplete = useCallback((lessonId: string) => {
+  const markComplete = useCallback(async (lessonId: string) => {
     const updated = { ...progress, [lessonId]: true };
     setProgress(updated);
     localStorage.setItem("workshift-progress", JSON.stringify(updated));
+
+    // Sync to Supabase
+    try {
+      const { createClient } = await import("@/lib/supabase/client");
+      const supabase = createClient();
+      const { data: { user } } = await supabase.auth.getUser();
+      if (user) {
+        await supabase.from("progress").upsert({ user_id: user.id, lesson_id: lessonId }, { onConflict: "user_id,lesson_id" });
+      }
+    } catch {}
   }, [progress]);
 
   const saveExercise = useCallback(() => {
