@@ -4,106 +4,97 @@ const STRIPE_LINK = "https://buy.stripe.com/00waEZ67ndFLbrXfaUgEg00";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center px-4 pt-20 pb-16 overflow-hidden">
-      {/* Background grid */}
-      <div
-        className="absolute inset-0 opacity-[0.03]"
+    <section className="relative flex flex-col items-center justify-center px-4 pt-20 pb-20 overflow-hidden">
+      {/* Subtle warm background pattern */}
+      <div className="absolute inset-0 opacity-[0.015]"
         style={{
-          backgroundImage: `linear-gradient(rgba(255,255,255,.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.1) 1px, transparent 1px)`,
-          backgroundSize: "64px 64px",
+          backgroundImage: `radial-gradient(circle, #1c3557 1px, transparent 1px)`,
+          backgroundSize: "32px 32px",
         }}
       />
-
-      {/* Radial glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] rounded-full opacity-20 blur-[120px] pointer-events-none"
-        style={{ background: "radial-gradient(ellipse, #6366f1 0%, #8b5cf6 40%, transparent 70%)" }} />
+      {/* Top navy bar accent */}
+      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#1c3557] via-[#c9a84c] to-[#1c3557]" />
 
       {/* Badge */}
-      <div className="relative z-10 mb-8 inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-indigo-500/30 bg-indigo-500/10 text-indigo-300 text-sm font-medium">
-        <span className="w-1.5 h-1.5 rounded-full bg-indigo-400 animate-pulse" />
-        100+ Done-for-You AI Prompts
+      <div className="relative z-10 mb-8 inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#c9a84c]/40 bg-[#c9a84c]/8 text-[#8a6a1f] text-sm font-medium">
+        <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+        </svg>
+        100+ Done-for-You AI Prompts for Real Estate Agents
       </div>
 
       {/* Headline */}
-      <h1 className="relative z-10 text-center text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.05] max-w-5xl mb-6">
-        Write Listings. Win Clients.
+      <h1 className="relative z-10 text-center text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.05] max-w-5xl mb-6 text-[#1c3557]">
+        Stop Writing From Scratch.
         <br />
-        <span className="gradient-text">Grow Your Business.</span>
+        <span className="gold-gradient-text">Start Closing More Deals.</span>
       </h1>
 
       {/* Subheadline */}
-      <p className="relative z-10 text-center text-lg sm:text-xl text-zinc-400 max-w-2xl mb-10 leading-relaxed">
+      <p className="relative z-10 text-center text-lg sm:text-xl text-[#4a5568] max-w-2xl mb-10 leading-relaxed">
         The only AI prompt toolkit built specifically for real estate agents.
-        MLS descriptions, client emails, social content, and 5 complete workflow SOPs —
-        ready to use in minutes.
+        95+ ready-to-use prompts for listings, client emails, social content,
+        and 5 complete workflow SOPs — results in under 8 minutes.
       </p>
 
       {/* CTA */}
-      <div className="relative z-10 flex flex-col sm:flex-row items-center gap-4 mb-12">
+      <div className="relative z-10 flex flex-col sm:flex-row items-center gap-4 mb-14">
         <a
           href={STRIPE_LINK}
-          className="group flex items-center gap-2 px-8 py-4 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-lg transition-all duration-200 shadow-lg shadow-indigo-600/30 hover:shadow-indigo-500/40 hover:-translate-y-0.5"
+          className="group flex items-center gap-2 px-8 py-4 rounded-xl bg-[#1c3557] hover:bg-[#2a4f7c] text-white font-semibold text-lg transition-all duration-200 shadow-lg shadow-[#1c3557]/20 hover:shadow-[#1c3557]/30 hover:-translate-y-0.5"
         >
           Get Instant Access — $47
           <svg className="w-5 h-5 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
           </svg>
         </a>
-        <p className="text-zinc-500 text-sm">One-time purchase · Instant download · Yours forever</p>
+        <p className="text-[#718096] text-sm">One-time · Instant download · Works with free AI tools</p>
       </div>
 
-      {/* Social proof strip */}
-      <div className="relative z-10 flex items-center gap-6 text-zinc-500 text-sm">
-        <div className="flex items-center gap-2">
-          <svg className="w-4 h-4 text-emerald-500" fill="currentColor" viewBox="0 0 20 20">
-            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-          </svg>
-          Works with ChatGPT & Claude
-        </div>
-        <div className="w-px h-4 bg-zinc-800" />
-        <div className="flex items-center gap-2">
-          <svg className="w-4 h-4 text-emerald-500" fill="currentColor" viewBox="0 0 20 20">
-            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-          </svg>
-          No monthly fees
-        </div>
-        <div className="w-px h-4 bg-zinc-800" />
-        <div className="flex items-center gap-2">
-          <svg className="w-4 h-4 text-emerald-500" fill="currentColor" viewBox="0 0 20 20">
-            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-          </svg>
-          Instant download
-        </div>
+      {/* Trust strip */}
+      <div className="relative z-10 flex flex-wrap justify-center items-center gap-x-6 gap-y-2 text-[#718096] text-sm mb-16">
+        {["Works with ChatGPT & Claude", "No monthly fees", "Instant ZIP download", "4–8 min per task"].map((item, i, arr) => (
+          <div key={item} className="flex items-center gap-4">
+            <span className="flex items-center gap-1.5">
+              <svg className="w-4 h-4 text-[#c9a84c]" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+              </svg>
+              {item}
+            </span>
+            {i < arr.length - 1 && <span className="text-[#e2d9c8]">·</span>}
+          </div>
+        ))}
       </div>
 
       {/* Preview card */}
-      <div className="relative z-10 mt-16 w-full max-w-3xl">
-        <div className="glow-border rounded-2xl bg-zinc-900/80 backdrop-blur-sm p-1 shadow-2xl">
-          <div className="rounded-xl bg-zinc-950 p-6">
-            {/* Terminal header */}
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-3 h-3 rounded-full bg-red-500/80" />
-              <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
-              <div className="w-3 h-3 rounded-full bg-green-500/80" />
-              <span className="ml-2 text-zinc-600 text-xs font-mono">02-listing-prompts.md</span>
+      <div className="relative z-10 w-full max-w-3xl">
+        <div className="rounded-2xl border border-[#e2d9c8] bg-white card-shadow overflow-hidden">
+          {/* Card header */}
+          <div className="flex items-center justify-between px-5 py-3 border-b border-[#f0ece3] bg-[#fdf9f2]">
+            <div className="flex items-center gap-2">
+              <div className="w-2.5 h-2.5 rounded-full bg-[#1c3557]" />
+              <span className="text-[#4a5568] text-xs font-mono">02-listing-prompts.md</span>
             </div>
-            {/* Code preview */}
-            <div className="font-mono text-sm space-y-1">
-              <p className="text-zinc-600">{"// Standard MLS Description"}</p>
-              <p className="text-zinc-400">Act as an expert real estate copywriter. Write a</p>
-              <p className="text-zinc-400">compelling MLS description for the following home.</p>
-              <p className="mt-2 text-zinc-500">Property details:</p>
-              <p><span className="text-indigo-400">- Address:</span> <span className="text-emerald-400">[NEIGHBORHOOD OR CITY]</span></p>
-              <p><span className="text-indigo-400">- Bedrooms:</span> <span className="text-emerald-400">[NUMBER]</span></p>
-              <p><span className="text-indigo-400">- Key features:</span> <span className="text-emerald-400">[LIST 5-8 FEATURES]</span></p>
-              <p><span className="text-indigo-400">- Asking price:</span> <span className="text-emerald-400">[$PRICE]</span></p>
-              <p className="mt-2 text-zinc-500">Requirements:</p>
-              <p className="text-zinc-400">- Length: 250-350 words · Tone: warm and professional</p>
-              <p className="text-zinc-400">- Lead with the most compelling feature</p>
-              <p className="text-zinc-400">- End with a strong call to action</p>
+            <span className="text-[#c9a84c] text-xs font-medium">Standard MLS Description</span>
+          </div>
+          {/* Content */}
+          <div className="p-6 font-mono text-sm">
+            <p className="text-[#718096] mb-3">Act as an expert real estate copywriter. Write a compelling MLS description for the following home.</p>
+            <div className="space-y-1.5">
+              <p className="text-[#4a5568]">Property details:</p>
+              <p><span className="text-[#1c3557] font-medium">- Address:</span> <span className="text-[#c9a84c]">[NEIGHBORHOOD OR CITY]</span></p>
+              <p><span className="text-[#1c3557] font-medium">- Bedrooms:</span> <span className="text-[#c9a84c]">[NUMBER]</span></p>
+              <p><span className="text-[#1c3557] font-medium">- Key features:</span> <span className="text-[#c9a84c]">[LIST 5-8 FEATURES]</span></p>
+              <p><span className="text-[#1c3557] font-medium">- Asking price:</span> <span className="text-[#c9a84c]">[$PRICE]</span></p>
+              <div className="mt-3 pt-3 border-t border-[#f0ece3]">
+                <p className="text-[#4a5568]">Requirements:</p>
+                <p className="text-[#718096]">- 250-350 words · Warm and professional tone</p>
+                <p className="text-[#718096]">- Lead with the best feature · End with a CTA</p>
+              </div>
             </div>
           </div>
         </div>
+        <p className="text-center text-[#a0aec0] text-xs mt-3">One of 95+ prompts included. Copy. Fill brackets. Paste. Done.</p>
       </div>
     </section>
   );

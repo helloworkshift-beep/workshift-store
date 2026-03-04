@@ -1,8 +1,12 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0a0a0a;
-  --foreground: #ededed;
+  --background: #faf9f6;
+  --foreground: #1a1a1a;
+  --navy: #1c3557;
+  --navy-light: #2a4f7c;
+  --gold: #c9a84c;
+  --gold-light: #e8c96a;
 }
 
 * {
@@ -21,31 +25,30 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-@keyframes gradient-shift {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-}
-
 .gradient-text {
-  background: linear-gradient(135deg, #6366f1, #8b5cf6, #a855f7, #06b6d4);
-  background-size: 300% 300%;
+  background: linear-gradient(135deg, #1c3557, #2a6496, #c9a84c);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  animation: gradient-shift 6s ease infinite;
 }
 
-.glow-border {
-  border: 1px solid rgba(99, 102, 241, 0.3);
-  box-shadow: 0 0 30px rgba(99, 102, 241, 0.08);
+.gold-gradient-text {
+  background: linear-gradient(135deg, #c9a84c, #e8c96a, #c9a84c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-.card-hover {
+.card-shadow {
+  box-shadow: 0 1px 3px rgba(28, 53, 87, 0.06), 0 4px 16px rgba(28, 53, 87, 0.06);
   transition: all 0.2s ease;
 }
 
-.card-hover:hover {
+.card-shadow:hover {
+  box-shadow: 0 4px 12px rgba(28, 53, 87, 0.1), 0 12px 32px rgba(28, 53, 87, 0.1);
   transform: translateY(-2px);
-  border-color: rgba(99, 102, 241, 0.5);
-  box-shadow: 0 0 40px rgba(99, 102, 241, 0.12);
+}
+
+.gold-border {
+  border: 1px solid rgba(201, 168, 76, 0.3);
 }
