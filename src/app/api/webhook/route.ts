@@ -19,6 +19,34 @@ function generateDownloadToken(sessionId: string): string {
     .digest("hex");
 }
 
+async function sendTelegramNotification(amount: number, currency: string, email: string, productName: string) {
+  const token = process.env.TELEGRAM_BOT_TOKEN;
+  const chatId = process.env.TELEGRAM_CHAT_ID;
+  if (!token || !chatId) return;
+
+  const amountFormatted = new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: currency.toUpperCase(),
+  }).format(amount / 100);
+
+  const message = `💰 *New Sale!*\n\n` +
+    `*Product:* ${productName}\n` +
+    `*Amount:* ${amountFormatted}\n` +
+    `*Customer:* ${email}\n` +
+    `*Time:* ${new Date().toUTCString()}\n\n` +
+    `🎉 Download email sent automatically.`;
+
+  await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      chat_id: chatId,
+      text: message,
+      parse_mode: "Markdown",
+    }),
+  });
+}
+
 async function sendDownloadEmail(email: string, sessionId: string, customerName: string) {
   const token = generateDownloadToken(sessionId);
   const downloadUrl = `${process.env.NEXT_PUBLIC_BASE_URL}/api/download?token=${token}&session=${sessionId}`;
@@ -109,13 +137,24 @@ export async function POST(req: NextRequest) {
     const email = session.customer_details?.email;
     const name = session.customer_details?.name || "";
     const sessionId = session.id;
+    const amount = session.amount_total || 0;
+    const currency = session.currency || "usd";
 
     if (email) {
+      // Send download email
       try {
         await sendDownloadEmail(email, sessionId, name);
         console.log(`Download email sent to ${email}`);
       } catch (err) {
         console.error("Failed to send email:", err);
+      }
+
+      // Notify via Telegram
+      try {
+        await sendTelegramNotification(amount, currency, email, "Real Estate AI Prompt Toolkit");
+        console.log("Telegram notification sent");
+      } catch (err) {
+        console.error("Failed to send Telegram notification:", err);
       }
     }
   }
