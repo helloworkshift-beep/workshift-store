@@ -4,7 +4,14 @@ import { createHmac } from "crypto";
 // Stripe initialized per-request to avoid build-time env issues
 
 // Map Stripe product IDs to our internal slugs
-const STRIPE_PRODUCT_MAP: Record<string, { slug: string; name: string; emoji: string; startStep: string }> = {
+const STRIPE_PRODUCT_MAP: Record<string, { slug: string; name: string; emoji: string; startStep: string; type?: string }> = {
+  "prod_U5YLVl9soeeAOI": {
+    slug: "workshift-course",
+    name: "The Workshift Course",
+    emoji: "🎓",
+    startStep: "Check your email for your course access link",
+    type: "course",
+  },
   "prod_U5Wcm7P9Zns2Xg": {
     slug: "real-estate",
     name: "Real Estate Agent's AI Prompt Toolkit",
@@ -65,6 +72,66 @@ async function sendTelegramNotification(amount: number, currency: string, email:
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ chat_id: chatId, text: message, parse_mode: "Markdown" }),
   });
+}
+
+async function sendCourseAccessEmail(email: string, name: string) {
+  const { createHmac: hmac } = await import("crypto");
+  const COURSE_SECRET = process.env.DOWNLOAD_SECRET || "fallback-secret";
+  const payload = `course:${email}:${Date.now()}`;
+  const sig = hmac("sha256", COURSE_SECRET).update(payload).digest("hex");
+  const token = Buffer.from(`${payload}:${sig}`).toString("base64url");
+
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://workshift.store";
+  const accessUrl = `${baseUrl}/course/access?token=${token}`;
+
+  const html = `<!DOCTYPE html>
+<html>
+<body style="margin:0;padding:0;background:#faf9f6;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
+  <div style="max-width:560px;margin:0 auto;padding:40px 20px;">
+    <div style="background:#1c3557;border-radius:16px 16px 0 0;padding:32px;text-align:center;">
+      <div style="color:#c9a84c;font-size:13px;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;margin-bottom:8px;">Workshift</div>
+      <h1 style="color:white;font-size:24px;font-weight:700;margin:0;">Your course is ready. 🎓</h1>
+    </div>
+    <div style="background:white;padding:32px;border:1px solid #ede8df;border-top:none;">
+      <p style="color:#4a5568;font-size:15px;line-height:1.6;margin:0 0 20px;">Hey ${name || "there"},</p>
+      <p style="color:#4a5568;font-size:15px;line-height:1.6;margin:0 0 24px;">
+        Welcome to <strong style="color:#1c3557;">The Workshift Course</strong>. Your access is ready — click below to start your first lesson.
+      </p>
+      <div style="text-align:center;margin:32px 0;">
+        <a href="${accessUrl}" style="display:inline-block;background:#1c3557;color:white;font-size:16px;font-weight:600;padding:16px 36px;border-radius:12px;text-decoration:none;">
+          Start the course →
+        </a>
+      </div>
+      <p style="color:#a0aec0;font-size:12px;text-align:center;margin:0 0 24px;">This link logs you in automatically. Bookmark your dashboard once inside.</p>
+      <div style="background:#faf9f6;border-radius:12px;padding:20px;border:1px solid #ede8df;">
+        <p style="color:#1c3557;font-weight:600;font-size:14px;margin:0 0 8px;">What's waiting for you:</p>
+        <p style="color:#4a5568;font-size:14px;margin:0 0 6px;">🎓 10 modules, 60+ lessons — beginner to advanced</p>
+        <p style="color:#4a5568;font-size:14px;margin:0 0 6px;">✏️ Interactive exercises saved to your browser</p>
+        <p style="color:#4a5568;font-size:14px;margin:0 0 6px;">📋 Progress tracking across all lessons</p>
+        <p style="color:#4a5568;font-size:14px;margin:0;">🗓️ 90-day adoption plan template included</p>
+      </div>
+    </div>
+    <div style="padding:20px;text-align:center;">
+      <p style="color:#a0aec0;font-size:12px;margin:0;">© 2025 Workshift · <a href="mailto:helloworkshift@gmail.com" style="color:#a0aec0;">helloworkshift@gmail.com</a></p>
+    </div>
+  </div>
+</body>
+</html>`;
+
+  const res = await fetch("https://api.resend.com/emails", {
+    method: "POST",
+    headers: {
+      "Authorization": `Bearer ${process.env.RESEND_API_KEY}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      from: "Workshift <onboarding@resend.dev>",
+      to: [email],
+      subject: "Your Workshift Course is ready 🎓",
+      html,
+    }),
+  });
+  if (!res.ok) throw new Error(`Resend error: ${await res.text()}`);
 }
 
 async function sendDownloadEmail(
@@ -177,16 +244,21 @@ export async function POST(req: NextRequest) {
 
     if (email) {
       try {
-        await sendDownloadEmail(
-          email,
-          sessionId,
-          name,
-          productInfo.slug,
-          productInfo.name,
-          productInfo.emoji,
-          productInfo.startStep
-        );
-        console.log(`Download email sent to ${email} for ${productInfo.name}`);
+        if (productInfo.type === "course") {
+          await sendCourseAccessEmail(email, name);
+          console.log(`Course access email sent to ${email}`);
+        } else {
+          await sendDownloadEmail(
+            email,
+            sessionId,
+            name,
+            productInfo.slug,
+            productInfo.name,
+            productInfo.emoji,
+            productInfo.startStep
+          );
+          console.log(`Download email sent to ${email} for ${productInfo.name}`);
+        }
       } catch (err) {
         console.error("Failed to send email:", err);
       }
