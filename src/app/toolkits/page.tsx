@@ -28,7 +28,7 @@ const toolkits = [
     color: "from-indigo-500 to-blue-500",
     badge: "🗺️",
     tags: ["PRDs", "Roadmaps", "Stakeholder updates", "User stories"],
-    status: "coming",
+    status: "live",
   },
   {
     slug: "scrum-master",
@@ -40,7 +40,7 @@ const toolkits = [
     color: "from-violet-500 to-purple-500",
     badge: "🔄",
     tags: ["Sprint planning", "Retros", "Team coaching", "Stakeholder comms"],
-    status: "coming",
+    status: "live",
   },
   {
     slug: "marketing",
@@ -52,7 +52,7 @@ const toolkits = [
     color: "from-pink-500 to-rose-500",
     badge: "📣",
     tags: ["Campaign copy", "Social posts", "Email sequences", "Ad copy"],
-    status: "coming",
+    status: "live",
   },
   {
     slug: "ux-research",
@@ -64,7 +64,7 @@ const toolkits = [
     color: "from-cyan-500 to-teal-500",
     badge: "🔍",
     tags: ["Interview guides", "Synthesis", "Usability tests", "Reports"],
-    status: "coming",
+    status: "live",
   },
 ];
 
@@ -149,10 +149,10 @@ export default function Toolkits() {
           <div className="text-4xl mb-4">📦</div>
           <h2 className="text-2xl font-bold text-white mb-3">The Complete Bundle</h2>
           <p className="text-[#94b4d4] mb-6 max-w-lg mx-auto">
-            All 5 toolkits. Every role covered. Coming soon at a significant discount.
+            All 5 toolkits. Every role covered. Get the complete bundle at a significant discount.
           </p>
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 text-[#c9a84c] text-sm font-medium">
-            🔔 More toolkits launching soon
+            🔔 Bundle pricing coming soon
           </div>
         </div>
       </div>

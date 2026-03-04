@@ -3,6 +3,40 @@ import { createHmac } from "crypto";
 
 // Stripe initialized per-request to avoid build-time env issues
 
+// Map Stripe product IDs to our internal slugs
+const STRIPE_PRODUCT_MAP: Record<string, { slug: string; name: string; emoji: string; startStep: string }> = {
+  "prod_U5Wcm7P9Zns2Xg": {
+    slug: "real-estate",
+    name: "Real Estate Agent's AI Prompt Toolkit",
+    emoji: "🏡",
+    startStep: "Open 02-listing-prompts.md and write your first MLS description",
+  },
+  "prod_U5XMAI8W0qHO7c": {
+    slug: "product-manager",
+    name: "Product Manager's AI Prompt Toolkit",
+    emoji: "🗺️",
+    startStep: "Open 02-strategy-roadmap-prompts.md and draft your first roadmap prompt",
+  },
+  "prod_U5XM9zBTJRgVwI": {
+    slug: "scrum-master",
+    name: "Scrum Master's AI Prompt Toolkit",
+    emoji: "🔄",
+    startStep: "Open 02-ceremonies-prompts.md and run your first sprint planning prompt",
+  },
+  "prod_U5XMxnYgGNhFKY": {
+    slug: "marketing",
+    name: "Marketer's AI Prompt Toolkit",
+    emoji: "📣",
+    startStep: "Open 02-content-social-prompts.md and batch your first week of content",
+  },
+  "prod_U5XMGCvqTWtGky": {
+    slug: "user-research",
+    name: "UX Researcher's AI Prompt Toolkit",
+    emoji: "🔍",
+    startStep: "Open 02-interview-research-prompts.md and build your first interview guide",
+  },
+};
+
 function generateDownloadToken(sessionId: string): string {
   return createHmac("sha256", process.env.DOWNLOAD_SECRET!)
     .update(sessionId)
@@ -33,9 +67,17 @@ async function sendTelegramNotification(amount: number, currency: string, email:
   });
 }
 
-async function sendDownloadEmail(email: string, sessionId: string, customerName: string) {
+async function sendDownloadEmail(
+  email: string,
+  sessionId: string,
+  customerName: string,
+  productSlug: string,
+  productName: string,
+  productEmoji: string,
+  startStep: string
+) {
   const token = generateDownloadToken(sessionId);
-  const downloadUrl = `${process.env.NEXT_PUBLIC_BASE_URL}/api/download?token=${token}&session=${sessionId}`;
+  const downloadUrl = `${process.env.NEXT_PUBLIC_BASE_URL}/api/download?token=${token}&session=${sessionId}&product=${productSlug}`;
 
   const html = `<!DOCTYPE html>
 <html>
@@ -43,12 +85,12 @@ async function sendDownloadEmail(email: string, sessionId: string, customerName:
   <div style="max-width:560px;margin:0 auto;padding:40px 20px;">
     <div style="background:#1c3557;border-radius:16px 16px 0 0;padding:32px;text-align:center;">
       <div style="color:#c9a84c;font-size:13px;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;margin-bottom:8px;">Workshift</div>
-      <h1 style="color:white;font-size:24px;font-weight:700;margin:0;">Your toolkit is ready.</h1>
+      <h1 style="color:white;font-size:24px;font-weight:700;margin:0;">Your toolkit is ready. ${productEmoji}</h1>
     </div>
     <div style="background:white;padding:32px;border:1px solid #ede8df;border-top:none;">
       <p style="color:#4a5568;font-size:15px;line-height:1.6;margin:0 0 20px;">Hey ${customerName || "there"},</p>
       <p style="color:#4a5568;font-size:15px;line-height:1.6;margin:0 0 24px;">
-        Thanks for your purchase — your <strong style="color:#1c3557;">Real Estate Agent's AI Prompt Toolkit</strong> is ready to download.
+        Thanks for your purchase — your <strong style="color:#1c3557;">${productName}</strong> is ready to download.
       </p>
       <div style="text-align:center;margin:32px 0;">
         <a href="${downloadUrl}" style="display:inline-block;background:#1c3557;color:white;font-size:16px;font-weight:600;padding:16px 36px;border-radius:12px;text-decoration:none;">
@@ -62,7 +104,7 @@ async function sendDownloadEmail(email: string, sessionId: string, customerName:
         <p style="color:#1c3557;font-weight:600;font-size:14px;margin:0 0 12px;">Quick Start (3 steps):</p>
         <p style="color:#4a5568;font-size:14px;margin:0 0 8px;">1. Unzip and open <strong>README.md</strong> first</p>
         <p style="color:#4a5568;font-size:14px;margin:0 0 8px;">2. Read <strong>01-quick-start-guide.md</strong> — takes 5 minutes</p>
-        <p style="color:#4a5568;font-size:14px;margin:0;">3. Open <strong>02-listing-prompts.md</strong> and write your first MLS description</p>
+        <p style="color:#4a5568;font-size:14px;margin:0;">3. ${startStep}</p>
       </div>
       <p style="color:#718096;font-size:14px;line-height:1.6;margin:0;">Questions? Reply to this email anytime.</p>
     </div>
@@ -82,7 +124,7 @@ async function sendDownloadEmail(email: string, sessionId: string, customerName:
     body: JSON.stringify({
       from: "Workshift <onboarding@resend.dev>",
       to: [email],
-      subject: "Your Real Estate AI Prompt Toolkit is ready 🏡",
+      subject: `Your ${productName} is ready ${productEmoji}`,
       html,
     }),
   });
@@ -116,16 +158,41 @@ export async function POST(req: NextRequest) {
     const amount = session.amount_total || 0;
     const currency = session.currency || "usd";
 
+    // Detect product from line items
+    let productInfo = STRIPE_PRODUCT_MAP["prod_U5Wcm7P9Zns2Xg"]; // fallback: real estate
+    try {
+      const lineItems = await stripe.checkout.sessions.listLineItems(sessionId, { expand: ["data.price.product"] });
+      const firstItem = lineItems.data[0];
+      if (firstItem?.price?.product) {
+        const prodId = typeof firstItem.price.product === "string"
+          ? firstItem.price.product
+          : (firstItem.price.product as import("stripe").Stripe.Product).id;
+        if (STRIPE_PRODUCT_MAP[prodId]) {
+          productInfo = STRIPE_PRODUCT_MAP[prodId];
+        }
+      }
+    } catch (err) {
+      console.error("Failed to fetch line items:", err);
+    }
+
     if (email) {
       try {
-        await sendDownloadEmail(email, sessionId, name);
-        console.log(`Download email sent to ${email}`);
+        await sendDownloadEmail(
+          email,
+          sessionId,
+          name,
+          productInfo.slug,
+          productInfo.name,
+          productInfo.emoji,
+          productInfo.startStep
+        );
+        console.log(`Download email sent to ${email} for ${productInfo.name}`);
       } catch (err) {
         console.error("Failed to send email:", err);
       }
 
       try {
-        await sendTelegramNotification(amount, currency, email, "Real Estate AI Prompt Toolkit");
+        await sendTelegramNotification(amount, currency, email, productInfo.name);
       } catch (err) {
         console.error("Failed to send Telegram notification:", err);
       }
