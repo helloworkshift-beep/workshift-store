@@ -30,12 +30,21 @@ export default function Footer() {
 
       {/* Footer */}
       <footer className="border-t border-[#ede8df] px-4 py-8 bg-[#faf9f6]">
-        <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-[#a0aec0] text-sm">
-          <div className="font-medium text-[#718096]">© 2025 Workshift. All rights reserved.</div>
-          <div className="flex items-center gap-4">
-            <span>Secured by Stripe</span>
+        <div className="max-w-6xl mx-auto space-y-4">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-[#a0aec0] text-sm">
+            <div className="font-medium text-[#718096]">© 2025 Workshift. All rights reserved.</div>
+            <div className="flex items-center gap-4">
+              <span>Secured by Stripe</span>
+              <span>·</span>
+              <a href="mailto:helloworkshift@gmail.com" className="hover:text-[#1c3557] transition-colors">Contact</a>
+            </div>
+          </div>
+          <div className="flex flex-wrap justify-center sm:justify-start items-center gap-x-4 gap-y-1 text-xs text-[#a0aec0]">
+            <a href="/legal/imprint" className="hover:text-[#1c3557] transition-colors">Imprint</a>
             <span>·</span>
-            <a href="mailto:helloworkshift@gmail.com" className="hover:text-[#1c3557] transition-colors">Contact</a>
+            <a href="/legal/privacy" className="hover:text-[#1c3557] transition-colors">Privacy Policy</a>
+            <span>·</span>
+            <a href="/legal/terms" className="hover:text-[#1c3557] transition-colors">Terms of Service</a>
           </div>
         </div>
       </footer>
