@@ -10,34 +10,20 @@ function verifyToken(sessionId: string, token: string): boolean {
   return expected === token;
 }
 
-const PRODUCT_FILES: Record<string, { filename: string; displayName: string }> = {
-  "real-estate": {
-    filename: "real-estate-ai-prompt-toolkit.zip",
-    displayName: "Real Estate AI Prompt Toolkit",
-  },
-  "product-manager": {
-    filename: "pm-ai-prompt-toolkit.zip",
-    displayName: "Product Manager AI Prompt Toolkit",
-  },
-  "scrum-master": {
-    filename: "scrum-master-ai-prompt-toolkit.zip",
-    displayName: "Scrum Master AI Prompt Toolkit",
-  },
-  "marketing": {
-    filename: "marketing-ai-prompt-toolkit.zip",
-    displayName: "Marketing AI Prompt Toolkit",
-  },
-  "user-research": {
-    filename: "user-research-ai-prompt-toolkit.zip",
-    displayName: "User Research AI Prompt Toolkit",
-  },
+const productMap: Record<string, string> = {
+  "default": "real-estate-ai-prompt-toolkit.zip",
+  "real-estate": "real-estate-ai-prompt-toolkit.zip",
+  "pm": "pm-toolkit.zip",
+  "scrum": "scrum-master-toolkit.zip",
+  "marketing": "marketing-toolkit.zip",
+  "ux-research": "user-research-toolkit.zip",
 };
 
 export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url);
   const token = searchParams.get("token");
   const sessionId = searchParams.get("session");
-  const product = searchParams.get("product") || "real-estate";
+  const product = searchParams.get("product") || "default";
 
   if (!token || !sessionId) {
     return NextResponse.json({ error: "Invalid link" }, { status: 400 });
@@ -47,16 +33,16 @@ export async function GET(req: NextRequest) {
     return NextResponse.json({ error: "Invalid or expired link" }, { status: 403 });
   }
 
-  const productInfo = PRODUCT_FILES[product] || PRODUCT_FILES["real-estate"];
+  const filename = productMap[product] || productMap["default"];
 
   try {
-    const filePath = join(process.cwd(), "public", "downloads", productInfo.filename);
+    const filePath = join(process.cwd(), "public", "downloads", filename);
     const fileBuffer = readFileSync(filePath);
 
     return new NextResponse(fileBuffer, {
       headers: {
         "Content-Type": "application/zip",
-        "Content-Disposition": `attachment; filename="${productInfo.filename}"`,
+        "Content-Disposition": `attachment; filename="${filename}"`,
         "Content-Length": fileBuffer.length.toString(),
       },
     });
