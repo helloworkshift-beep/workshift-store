@@ -42,6 +42,12 @@ const STRIPE_PRODUCT_MAP: Record<string, { slug: string; name: string; emoji: st
     emoji: "🔍",
     startStep: "Open 02-interview-research-prompts.md and build your first interview guide",
   },
+  "prod_U7DhHD5aqsKp5C": {
+    slug: "sales-rep",
+    name: "Sales Rep's AI Prompt Toolkit",
+    emoji: "💼",
+    startStep: "Open 02-prospecting-outreach.md and write your first cold email",
+  },
 };
 
 function generateDownloadToken(sessionId: string): string {

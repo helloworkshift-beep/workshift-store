@@ -17,6 +17,7 @@ const productMap: Record<string, string> = {
   "scrum": "scrum-master-toolkit.zip",
   "marketing": "marketing-toolkit.zip",
   "ux-research": "user-research-toolkit.zip",
+  "sales-rep": "sales-rep-toolkit.zip",
 };
 
 export async function GET(req: NextRequest) {

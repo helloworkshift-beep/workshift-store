@@ -1,6 +1,6 @@
 "use client";
 
-const STRIPE_LINK = "https://buy.stripe.com/00waEZ67ndFLbrXfaUgEg00";
+const STRIPE_LINK = "/api/checkout?product=real-estate-toolkit";
 
 export default function Hero() {
   return (

@@ -1,5 +1,16 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Footer from "@/components/Footer";
+
+export const metadata: Metadata = {
+  title: "Claude Co-Work — The AI Course for Knowledge Workers | Workshift",
+  description: "A structured course for professionals who want to use Claude and AI at work. 60+ lessons, exercises, and real-world prompt patterns.",
+  openGraph: {
+    title: "Claude Co-Work — The AI Course for Knowledge Workers",
+    description: "A structured course for professionals who want to use Claude and AI at work. 60+ lessons, exercises, and real-world prompt patterns.",
+    type: "website",
+  },
+};
 
 const MODULES = [
   {
@@ -80,7 +91,7 @@ export default function CoursePage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <a
-              href="https://buy.stripe.com/eVqeVf53j8lr0Nje6QgEg05"
+              href="/api/checkout?product=course"
               className="bg-[#c9a84c] text-[#1c3557] font-bold text-lg px-10 py-4 rounded-xl hover:bg-[#c9a84c]/90 transition-colors"
             >
               Enroll now — $297
@@ -172,7 +183,7 @@ export default function CoursePage() {
               ))}
             </ul>
             <a
-              href="https://buy.stripe.com/eVqeVf53j8lr0Nje6QgEg05"
+              href="/api/checkout?product=course"
               className="block bg-[#1c3557] text-white font-bold text-lg py-4 rounded-xl hover:bg-[#1c3557]/90 transition-colors text-center"
             >
               Enroll now — $297
@@ -203,7 +214,7 @@ export default function CoursePage() {
           <h2 className="text-3xl font-bold text-white mb-4">The shift is already happening.</h2>
           <p className="text-white/60 mb-8 text-lg">The question isn't whether AI will change your work. It's whether you'll be ahead of it or behind it.</p>
           <a
-            href="https://buy.stripe.com/eVqeVf53j8lr0Nje6QgEg05"
+            href="/api/checkout?product=course"
             className="inline-block bg-[#c9a84c] text-[#1c3557] font-bold text-lg px-10 py-4 rounded-xl hover:bg-[#c9a84c]/90 transition-colors"
           >
             Start the Workshift Course — $297

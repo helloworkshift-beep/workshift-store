@@ -12,7 +12,7 @@ const toolkits = [
     tagline: "Write listings, win clients, grow your business.",
     prompts: "95+",
     price: 47,
-    stripeLink: "https://buy.stripe.com/00waEZ67ndFLbrXfaUgEg00",
+    stripeLink: "/api/checkout?product=real-estate-toolkit",
     color: "from-amber-500 to-orange-500",
     badge: "🏡",
     tags: ["MLS descriptions", "Client emails", "Social content", "SOPs"],
@@ -24,7 +24,7 @@ const toolkits = [
     tagline: "Ship better products with less writing friction.",
     prompts: "100+",
     price: 67,
-    stripeLink: "https://buy.stripe.com/3cI5kFfHXatzfIdd2MgEg01",
+    stripeLink: "/api/checkout?product=pm-toolkit",
     color: "from-indigo-500 to-blue-500",
     badge: "🗺️",
     tags: ["PRDs", "Roadmaps", "Stakeholder updates", "User stories"],
@@ -36,7 +36,7 @@ const toolkits = [
     tagline: "Run better ceremonies. Coach stronger teams.",
     prompts: "100+",
     price: 57,
-    stripeLink: "https://buy.stripe.com/8x2dRbcvL45bcw1bYIgEg02",
+    stripeLink: "/api/checkout?product=scrum-master-toolkit",
     color: "from-violet-500 to-purple-500",
     badge: "🔄",
     tags: ["Sprint planning", "Retros", "Team coaching", "Stakeholder comms"],
@@ -48,7 +48,7 @@ const toolkits = [
     tagline: "Launch campaigns, write copy, grow faster.",
     prompts: "100+",
     price: 67,
-    stripeLink: "https://buy.stripe.com/7sY3cx0N3eJPdA5aUEgEg03",
+    stripeLink: "/api/checkout?product=marketing-toolkit",
     color: "from-pink-500 to-rose-500",
     badge: "📣",
     tags: ["Campaign copy", "Social posts", "Email sequences", "Ad copy"],
@@ -60,10 +60,22 @@ const toolkits = [
     tagline: "Research faster. Insights that actually land.",
     prompts: "100+",
     price: 57,
-    stripeLink: "https://buy.stripe.com/3cI14pgM10SZ2Vr8MwgEg04",
+    stripeLink: "/api/checkout?product=user-research-toolkit",
     color: "from-cyan-500 to-teal-500",
     badge: "🔍",
     tags: ["Interview guides", "Synthesis", "Usability tests", "Reports"],
+    status: "live",
+  },
+  {
+    slug: "sales-rep",
+    name: "Sales Rep",
+    tagline: "Stop staring at a blank screen. Start closing deals.",
+    prompts: "90+",
+    price: 57,
+    stripeLink: "/api/checkout?product=sales-rep-toolkit",
+    color: "from-emerald-500 to-green-500",
+    badge: "💼",
+    tags: ["Cold outreach", "Discovery calls", "Objection handling", "Proposals"],
     status: "live",
   },
 ];
@@ -149,7 +161,7 @@ export default function Toolkits() {
           <div className="text-4xl mb-4">📦</div>
           <h2 className="text-2xl font-bold text-white mb-3">The Complete Bundle</h2>
           <p className="text-[#94b4d4] mb-6 max-w-lg mx-auto">
-            All 5 toolkits. Every role covered. Get the complete bundle at a significant discount.
+            All 6 toolkits. Every role covered. Get the complete bundle at a significant discount.
           </p>
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 text-[#c9a84c] text-sm font-medium">
             🔔 Bundle pricing coming soon
