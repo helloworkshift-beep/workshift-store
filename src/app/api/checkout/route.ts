@@ -8,6 +8,7 @@ const PRICE_MAP: Record<string, string> = {
   "marketing-toolkit":      "price_1T7MIDRJBoE9Jl8eTDmoPReW",
   "user-research-toolkit":  "price_1T7MIERJBoE9Jl8e2x12Ubqg",
   "sales-rep-toolkit":      "price_1T8zFvRJBoE9Jl8eRNSEVWz3",
+  "hr-recruiter-toolkit":   "price_1T9AZARJBoE9Jl8eD3dTlIvu",
   "course":                 "price_1T7NEjRJBoE9Jl8ehCYrKoRs",
 };
 

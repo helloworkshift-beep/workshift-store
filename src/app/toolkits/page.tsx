@@ -78,6 +78,18 @@ const toolkits = [
     tags: ["Cold outreach", "Discovery calls", "Objection handling", "Proposals"],
     status: "live",
   },
+  {
+    slug: "hr-recruiter",
+    name: "HR & Recruiter",
+    tagline: "Hire better. Communicate clearer. Build stronger teams.",
+    prompts: "93+",
+    price: 57,
+    stripeLink: "/api/checkout?product=hr-recruiter-toolkit",
+    color: "from-rose-500 to-pink-500",
+    badge: "🧑‍💼",
+    tags: ["Job descriptions", "Sourcing", "Interviews", "HR comms"],
+    status: "live",
+  },
 ];
 
 export default function Toolkits() {
@@ -161,7 +173,7 @@ export default function Toolkits() {
           <div className="text-4xl mb-4">📦</div>
           <h2 className="text-2xl font-bold text-white mb-3">The Complete Bundle</h2>
           <p className="text-[#94b4d4] mb-6 max-w-lg mx-auto">
-            All 6 toolkits. Every role covered. Get the complete bundle at a significant discount.
+            All 7 toolkits. Every role covered. Get the complete bundle at a significant discount.
           </p>
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 text-[#c9a84c] text-sm font-medium">
             🔔 Bundle pricing coming soon

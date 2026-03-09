@@ -383,6 +383,69 @@ const toolkits = {
       "Sales managers who want to standardize high-quality outreach across their team",
     ],
   },
+
+  "hr-recruiter": {
+    slug: "hr-recruiter",
+    name: "HR & Recruiter",
+    badge: "🧑‍💼",
+    prompts: "93+",
+    price: 57,
+    stripeLink: "/api/checkout?product=hr-recruiter-toolkit",
+    colorBar: "from-rose-500 to-pink-500",
+    tagline: "Hire better. Communicate clearer. Build stronger teams.",
+    subheadline:
+      "93 AI prompts covering the full HR and recruiting workflow — from writing job descriptions to handling difficult performance conversations. Built for practitioners doing the actual work.",
+    tags: ["Job descriptions", "Sourcing", "Interviews", "HR comms"],
+    features: [
+      {
+        icon: "📋",
+        title: "Job Descriptions & EVP",
+        desc: "Write compelling JDs that attract the right candidates — not just any candidates. Includes DEI-conscious language, bias audits, and employer brand copy.",
+      },
+      {
+        icon: "🔎",
+        title: "Sourcing & Outreach",
+        desc: "LinkedIn InMails, cold email sequences, Boolean search strings, and passive candidate re-engagement messages that actually get replies.",
+      },
+      {
+        icon: "🎙️",
+        title: "Screening & Interviews",
+        desc: "Structured interview guides, phone screen frameworks, technical assessment briefs, and scorecards that make hiring decisions defensible.",
+      },
+      {
+        icon: "💌",
+        title: "Candidate Experience",
+        desc: "Application acknowledgements, status updates at every stage, rejection emails that leave candidates with a positive impression, and offer letter templates.",
+      },
+      {
+        icon: "🚀",
+        title: "Onboarding",
+        desc: "30/60/90-day plans, pre-boarding welcome messages, remote onboarding guides, and buddy program frameworks that reduce early attrition.",
+      },
+      {
+        icon: "📣",
+        title: "HR Communications",
+        desc: "Policy change announcements, layoff communications, PIP documentation, termination scripts, and RTO messaging — including the hard stuff.",
+      },
+    ],
+    samplePrompts: [
+      {
+        label: "Job Description Rewrite",
+        prompt:
+          "Rewrite this job description to be more compelling and inclusive. Remove jargon, cut requirements that are actually preferences, and lead with what the candidate gains — not just what we need. Original JD: [PASTE]. Role: [TITLE] at [COMPANY]. Tone: [TONE].",
+      },
+      {
+        label: "LinkedIn InMail (Passive Candidate)",
+        prompt:
+          "Write a LinkedIn InMail to [CANDIDATE NAME], a [CURRENT ROLE] at [CURRENT COMPANY]. I'm recruiting for a [OPEN ROLE] at [HIRING COMPANY]. Key draw for them: [HOOK — e.g., remote-first, Series B momentum, specific tech stack]. Under 100 words. Sound like a human, not a recruiter template.",
+      },
+    ],
+    whoItsFor: [
+      "In-house recruiters who need to move faster without sacrificing candidate quality",
+      "HR managers who write the same communications over and over and want a better system",
+      "People ops leads standardizing the employee experience from offer to offboarding",
+    ],
+  },
 };
 
 /* ─────────────────────────────────────────────

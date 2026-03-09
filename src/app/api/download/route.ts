@@ -18,6 +18,7 @@ const productMap: Record<string, string> = {
   "marketing": "marketing-toolkit.zip",
   "ux-research": "user-research-toolkit.zip",
   "sales-rep": "sales-rep-toolkit.zip",
+  "hr-recruiter": "hr-recruiter-toolkit.zip",
 };
 
 export async function GET(req: NextRequest) {

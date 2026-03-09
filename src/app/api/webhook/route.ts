@@ -48,6 +48,12 @@ const STRIPE_PRODUCT_MAP: Record<string, { slug: string; name: string; emoji: st
     emoji: "💼",
     startStep: "Open 02-prospecting-outreach.md and write your first cold email",
   },
+  "prod_U7PNxium7pEqWY": {
+    slug: "hr-recruiter",
+    name: "HR & Recruiter's AI Prompt Toolkit",
+    emoji: "🧑‍💼",
+    startStep: "Open 02-job-descriptions-evp.md and rewrite your worst job description",
+  },
 };
 
 function generateDownloadToken(sessionId: string): string {
