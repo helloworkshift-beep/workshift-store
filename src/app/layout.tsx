@@ -34,6 +34,9 @@ export const metadata: Metadata = {
     site: "@workshift",
     creator: "@workshift",
   },
+  verification: {
+    other: { "msvalidate.01": "8D826E034F6BC279CFE020D4F55F004A" },
+  },
   robots: {
     index: true,
     follow: true,
