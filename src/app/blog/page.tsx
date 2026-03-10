@@ -8,7 +8,7 @@ const POSTS = [
     excerpt: "What the research actually says about AI and knowledge work, which tasks are most at risk, and what to do in the next 90 days.",
     category: "The Workshift",
     readTime: "8 min",
-    date: "March 2025",
+    date: "March 2026",
   },
   {
     slug: "how-to-use-claude-for-work",
@@ -16,7 +16,7 @@ const POSTS = [
     excerpt: "Setting up your first Project, writing effective prompts for professional tasks, and 5 workflows to start today.",
     category: "Getting Started",
     readTime: "7 min",
-    date: "March 2025",
+    date: "March 2026",
   },
   {
     slug: "context-engineering-guide",
@@ -24,7 +24,7 @@ const POSTS = [
     excerpt: "Most professionals plateau at prompting. Context engineering is what takes you past that ceiling.",
     category: "Deep Dive",
     readTime: "9 min",
-    date: "March 2025",
+    date: "March 2026",
   },
   {
     slug: "claude-prompting-guide-professionals",
@@ -32,15 +32,15 @@ const POSTS = [
     excerpt: "Why most professional prompts fail — and 15 production-ready templates you can use today.",
     category: "Prompting",
     readTime: "12 min",
-    date: "March 2025",
+    date: "March 2026",
   },
   {
     slug: "workshift-ai-skills-knowledge-workers",
-    title: "The 7 AI Skills Every Knowledge Worker Needs in 2025",
+    title: "The 7 AI Skills Every Knowledge Worker Needs in 2026",
     excerpt: "The specific capabilities that separate AI-native professionals from everyone else — and how to build each one.",
     category: "Skills",
     readTime: "10 min",
-    date: "March 2025",
+    date: "March 2026",
   },
   {
     slug: "agentic-thinking-guide",
@@ -48,7 +48,7 @@ const POSTS = [
     excerpt: "Stop thinking in messages. Start designing systems. The framework for non-technical professionals.",
     category: "Advanced",
     readTime: "9 min",
-    date: "March 2025",
+    date: "March 2026",
   },
   {
     slug: "claude-vs-chatgpt-for-work",
@@ -56,7 +56,7 @@ const POSTS = [
     excerpt: "No hype. A straightforward comparison of what each tool does better for knowledge workers.",
     category: "Tools",
     readTime: "8 min",
-    date: "March 2025",
+    date: "March 2026",
   },
   {
     slug: "ai-skills-for-lawyers",
@@ -64,7 +64,7 @@ const POSTS = [
     excerpt: "Contract review, research, drafting, and client communication — with the guardrails that matter.",
     category: "By Profession",
     readTime: "9 min",
-    date: "March 2025",
+    date: "March 2026",
   },
   {
     slug: "how-to-train-team-on-ai",
@@ -72,7 +72,7 @@ const POSTS = [
     excerpt: "Why most AI training fails, and the 4-step method that actually changes how people work.",
     category: "Leadership",
     readTime: "8 min",
-    date: "March 2025",
+    date: "March 2026",
   },
   {
     slug: "90-day-ai-transformation",
@@ -80,7 +80,7 @@ const POSTS = [
     excerpt: "A month-by-month roadmap from occasional AI user to genuinely transformed professional.",
     category: "Action Plan",
     readTime: "9 min",
-    date: "March 2025",
+    date: "March 2026",
   },
 ];
 

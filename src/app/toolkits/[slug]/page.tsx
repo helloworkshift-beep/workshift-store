@@ -1138,7 +1138,7 @@ export default async function ToolkitPage({
       {/* Footer */}
       <footer className="border-t border-[#ede8df] px-4 py-8 bg-white">
         <div className="max-w-6xl mx-auto flex flex-wrap items-center justify-between gap-4 text-[#a0aec0] text-sm">
-          <span>© 2025 Workshift</span>
+          <span>© 2026 Workshift</span>
           <div className="flex gap-4">
             <Link href="/legal/imprint" className="hover:text-[#1c3557] transition-colors">
               Imprint

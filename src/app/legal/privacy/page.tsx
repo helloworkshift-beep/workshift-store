@@ -4,7 +4,7 @@ export const metadata = { title: "Privacy Policy — Workshift" };
 
 export default function Privacy() {
   return (
-    <LegalLayout title="Privacy Policy" subtitle="Last updated: March 2025">
+    <LegalLayout title="Privacy Policy" subtitle="Last updated: March 2026">
 
       <section>
         <h2>1. Who we are</h2>

@@ -33,7 +33,7 @@ const POST_META: Record<string, { title: string; excerpt: string; category: stri
     related: ["context-engineering-guide", "how-to-use-claude-for-work"],
   },
   "workshift-ai-skills-knowledge-workers": {
-    title: "The 7 AI Skills Every Knowledge Worker Needs in 2025",
+    title: "The 7 AI Skills Every Knowledge Worker Needs in 2026",
     excerpt: "The specific capabilities that separate AI-native professionals from everyone else — and how to build each one.",
     category: "Skills", readTime: "10 min",
     related: ["90-day-ai-transformation", "ai-replacing-knowledge-workers"],

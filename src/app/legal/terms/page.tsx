@@ -4,7 +4,7 @@ export const metadata = { title: "Terms of Service — Workshift" };
 
 export default function Terms() {
   return (
-    <LegalLayout title="Terms of Service" subtitle="Last updated: March 2025">
+    <LegalLayout title="Terms of Service" subtitle="Last updated: March 2026">
 
       <section>
         <h2>1. About these terms</h2>

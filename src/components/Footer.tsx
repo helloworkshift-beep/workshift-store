@@ -32,7 +32,7 @@ export default function Footer() {
       <footer className="border-t border-[#ede8df] px-4 py-8 bg-[#faf9f6]">
         <div className="max-w-6xl mx-auto space-y-4">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-[#a0aec0] text-sm">
-            <div className="font-medium text-[#718096]">© 2025 Workshift. All rights reserved.</div>
+            <div className="font-medium text-[#718096]">© 2026 Workshift. All rights reserved.</div>
             <div className="flex items-center gap-4">
               <span>Secured by Stripe</span>
               <span>·</span>
