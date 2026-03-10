@@ -34,8 +34,6 @@ export default function AIPromptsForPage() {
         eyebrow="850+ prompts · 15 professions"
         title="AI prompts for every profession."
         subtitle="Stop writing from scratch. Done-for-you AI prompts for the specific tasks professionals do every day — built for ChatGPT, Claude, and Gemini."
-        ctaLabel="Browse all toolkits"
-        ctaHref="/toolkits"
         centered
       />
 
