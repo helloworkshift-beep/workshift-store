@@ -2,28 +2,41 @@ import Link from "next/link";
 
 export default function HomeCTA() {
   return (
-    <section className="bg-[#0a1628] py-24 px-6">
-      <div className="max-w-3xl mx-auto text-center">
-        <h2 className="text-4xl sm:text-5xl font-bold text-white tracking-tight mb-5">
-          Stop writing from scratch.
-        </h2>
-        <p className="text-lg text-[#94a3b8] mb-10 max-w-xl mx-auto leading-relaxed">
-          Every listing, every email, every deliverable — there&apos;s a prompt for it.
-          Pick your toolkit and get instant access today.
-        </p>
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Link
-            href="/toolkits"
-            className="group flex items-center gap-2 px-8 py-4 rounded-xl bg-[#c9a84c] hover:bg-[#e8c96a] text-[#0a1628] font-bold text-base transition-all duration-150 shadow-lg hover:-translate-y-0.5"
-          >
-            Browse all toolkits
-            <svg className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-            </svg>
-          </Link>
-          <p className="text-[#4b5e75] text-sm">
-            From $47 · One-time · Instant download
+    <section className="relative bg-[#0a2540] overflow-hidden py-24 px-6">
+      {/* Subtle gradient */}
+      <div
+        className="absolute inset-0 pointer-events-none opacity-30"
+        style={{
+          background: "radial-gradient(ellipse 80% 80% at 100% 50%, #635bff 0%, transparent 60%)",
+        }}
+      />
+
+      <div className="relative z-10 max-w-6xl mx-auto">
+        <div className="max-w-2xl">
+          <h2 className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight mb-5">
+            Stop writing from scratch.
+          </h2>
+          <p className="text-lg text-[#8898aa] mb-10 leading-relaxed">
+            Every listing, every proposal, every client email — there&apos;s a prompt for it.
+            From $47. One-time. Yours forever.
           </p>
+          <div className="flex flex-col sm:flex-row items-start gap-4">
+            <Link
+              href="/toolkits"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-md bg-[#635bff] hover:bg-[#7c75ff] text-white font-medium text-base transition-colors"
+            >
+              Browse all toolkits
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </Link>
+            <Link
+              href="/blog"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-md border border-white/20 text-white/80 hover:text-white hover:border-white/40 font-medium text-base transition-colors"
+            >
+              Read the blog
+            </Link>
+          </div>
         </div>
       </div>
     </section>
