@@ -70,12 +70,6 @@ const FAQS = [
 export default function CoursePage() {
   return (
     <div className="min-h-screen bg-[#faf9f6]">
-      {/* Nav */}
-      <nav className="bg-[#1c3557] px-6 py-4 flex justify-between items-center">
-        <Link href="/" className="text-[#c9a84c] font-bold text-lg">Workshift</Link>
-        <Link href="/course/access" className="text-white/70 hover:text-white text-sm transition-colors">Already enrolled? →</Link>
-      </nav>
-
       {/* Hero */}
       <section className="bg-[#1c3557] text-white px-6 pb-20 pt-16 text-center">
         <div className="max-w-3xl mx-auto">

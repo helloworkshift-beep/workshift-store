@@ -15,28 +15,36 @@ function AccessPageContent() {
   const [checking, setChecking] = useState(true);
 
   useEffect(() => {
-    const supabase = createClient();
-    supabase.auth.getUser().then(({ data: { user } }) => {
-      if (user) {
-        router.push("/course/learn");
-      } else {
-        setChecking(false);
-      }
-    });
+    try {
+      const supabase = createClient();
+      supabase.auth.getUser().then(({ data: { user } }) => {
+        if (user) {
+          router.push("/course/learn");
+        } else {
+          setChecking(false);
+        }
+      }).catch(() => setChecking(false));
+    } catch {
+      setChecking(false);
+    }
   }, [router]);
 
   const sendMagicLink = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    const supabase = createClient();
-    const { error } = await supabase.auth.signInWithOtp({
-      email,
-      options: {
-        emailRedirectTo: `${window.location.origin}/course/auth/callback`,
-      },
-    });
+    try {
+      const supabase = createClient();
+      const { error } = await supabase.auth.signInWithOtp({
+        email,
+        options: {
+          emailRedirectTo: `${window.location.origin}/course/auth/callback`,
+        },
+      });
+      if (!error) setSent(true);
+    } catch {
+      // Supabase not configured yet
+    }
     setLoading(false);
-    if (!error) setSent(true);
   };
 
   if (checking) {

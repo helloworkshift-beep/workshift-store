@@ -111,15 +111,6 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
 
   return (
     <div className="min-h-screen bg-[#faf9f6]">
-      <nav className="bg-[#1c3557] px-6 py-4 flex justify-between items-center">
-        <Link href="/" className="text-[#c9a84c] font-bold text-lg">Workshift</Link>
-        <div className="flex gap-6 text-sm">
-          <Link href="/blog" className="text-white/70 hover:text-white transition-colors">Blog</Link>
-          <Link href="/course" className="text-white/70 hover:text-white transition-colors">Course</Link>
-          <Link href="/toolkits" className="text-white/70 hover:text-white transition-colors">Toolkits</Link>
-        </div>
-      </nav>
-
       <article className="max-w-3xl mx-auto px-6 py-16">
         <div className="mb-8">
           <Link href="/blog" className="text-sm text-[#c9a84c] hover:underline">← All articles</Link>

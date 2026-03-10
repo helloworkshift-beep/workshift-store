@@ -193,16 +193,8 @@ const toolkits = [
 export default function Toolkits() {
   return (
     <main className="min-h-screen bg-[#faf9f6]">
-      <div className="h-1 bg-gradient-to-r from-[#1c3557] via-[#c9a84c] to-[#1c3557]" />
-
       {/* Header */}
       <div className="bg-white border-b border-[#ede8df] px-4 py-16 text-center">
-        <Link href="/" className="inline-flex items-center gap-1.5 text-[#718096] text-sm hover:text-[#1c3557] transition-colors mb-8">
-          <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-          </svg>
-          Workshift
-        </Link>
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#c9a84c]/30 bg-[#c9a84c]/8 text-[#8a6a1f] text-sm font-medium mb-6">
           AI Prompt Toolkits for Professionals
         </div>

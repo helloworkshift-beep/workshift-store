@@ -993,24 +993,6 @@ export default async function ToolkitPage({
       {/* Top accent bar */}
       <div className={`h-1 bg-gradient-to-r ${kit.colorBar}`} />
 
-      {/* Nav */}
-      <nav className="bg-[#1c3557] px-6 py-4 flex justify-between items-center">
-        <Link href="/" className="text-[#c9a84c] font-bold text-lg">
-          Workshift
-        </Link>
-        <div className="flex gap-6 text-sm">
-          <Link href="/blog" className="text-white/70 hover:text-white transition-colors">
-            Blog
-          </Link>
-          <Link href="/toolkits" className="text-white/70 hover:text-white transition-colors">
-            Toolkits
-          </Link>
-          <Link href="/course" className="text-white/70 hover:text-white transition-colors">
-            Course
-          </Link>
-        </div>
-      </nav>
-
       {/* ── Hero ── */}
       <section className="bg-white border-b border-[#ede8df] px-4 py-20 text-center">
         <div className="max-w-3xl mx-auto">

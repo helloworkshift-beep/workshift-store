@@ -105,14 +105,6 @@ export const metadata = {
 export default function BlogPage() {
   return (
     <div className="min-h-screen bg-[#faf9f6]">
-      <nav className="bg-[#1c3557] px-6 py-4 flex justify-between items-center">
-        <Link href="/" className="text-[#c9a84c] font-bold text-lg">Workshift</Link>
-        <div className="flex gap-6 text-sm">
-          <Link href="/toolkits" className="text-white/70 hover:text-white transition-colors">Toolkits</Link>
-          <Link href="/course" className="text-white/70 hover:text-white transition-colors">Course</Link>
-        </div>
-      </nav>
-
       <section className="bg-[#1c3557] text-white px-6 py-16 text-center">
         <div className="max-w-2xl mx-auto">
           <h1 className="text-4xl font-bold mb-4">The Workshift Blog</h1>

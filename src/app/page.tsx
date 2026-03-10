@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import HomeNav from "@/components/HomeNav";
 import HomeHero from "@/components/HomeHero";
 import HomeHowItWorks from "@/components/HomeHowItWorks";
 import HomeProductGrid from "@/components/HomeProductGrid";
@@ -22,7 +21,6 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <main className="min-h-screen bg-white text-[#0a1628] overflow-x-hidden">
-      <HomeNav />
       <HomeHero />
       <HomeHowItWorks />
       <HomeProductGrid />
