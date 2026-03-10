@@ -70,6 +70,97 @@ const POST_META: Record<string, { title: string; excerpt: string; category: stri
     category: "Action Plan", readTime: "9 min",
     related: ["workshift-ai-skills-knowledge-workers", "how-to-train-team-on-ai"],
   },
+  // ── SEO content ──
+  "ai-prompts-real-estate-agents": {
+    title: "AI Prompts for Real Estate Agents: 10 Templates That Actually Work",
+    excerpt: "Ready-to-use AI prompt templates for MLS listings, client emails, social media, and more. Copy, fill in the brackets, get professional results.",
+    category: "By Profession", readTime: "6 min",
+    related: ["how-to-write-better-ai-prompts", "ai-replacing-knowledge-workers"],
+  },
+  "chatgpt-prompts-product-managers": {
+    title: "ChatGPT Prompts for Product Managers: PRDs, Roadmaps, and Stakeholder Updates",
+    excerpt: "10 prompt templates for the most common PM writing tasks — PRDs, roadmaps, user stories, and stakeholder communications.",
+    category: "By Profession", readTime: "6 min",
+    related: ["how-to-write-better-ai-prompts", "context-engineering-guide"],
+  },
+  "ai-prompts-marketers": {
+    title: "AI Prompts for Marketers: 10 Templates That Actually Work",
+    excerpt: "Ready-to-use prompt templates for email sequences, social copy, ad variations, campaign briefs, and more.",
+    category: "By Profession", readTime: "6 min",
+    related: ["how-to-write-better-ai-prompts", "ai-vs-copywriter"],
+  },
+  "ai-prompts-sales-reps": {
+    title: "AI Prompts for Sales Reps: Templates for Every Stage of the Pipeline",
+    excerpt: "Cold emails, discovery prep, objection handling, follow-ups, and proposals — done-for-you prompt templates for salespeople.",
+    category: "By Profession", readTime: "5 min",
+    related: ["how-to-write-better-ai-prompts", "ai-replacing-knowledge-workers"],
+  },
+  "chatgpt-prompts-hr-recruiters": {
+    title: "ChatGPT Prompts for HR and Recruiters: Templates That Save Hours Every Week",
+    excerpt: "Job descriptions, sourcing messages, interview guides, rejection emails, onboarding plans — all in bracket-prompt format.",
+    category: "By Profession", readTime: "6 min",
+    related: ["how-to-write-better-ai-prompts", "workshift-ai-skills-knowledge-workers"],
+  },
+  "ai-prompts-financial-advisors": {
+    title: "AI Prompts for Financial Advisors: Write Better Client Communications in Less Time",
+    excerpt: "Quarterly reviews, market volatility emails, prospect outreach, and financial plan summaries — all in prompt format.",
+    category: "By Profession", readTime: "5 min",
+    related: ["how-to-write-better-ai-prompts", "claude-prompting-guide-professionals"],
+  },
+  "ai-prompts-teachers": {
+    title: "AI Prompts for Teachers: Lesson Plans, Parent Emails, and Reports in Minutes",
+    excerpt: "10 ready-to-use prompt templates for lesson planning, parent communication, assessments, and report cards.",
+    category: "By Profession", readTime: "6 min",
+    related: ["how-to-write-better-ai-prompts", "workshift-ai-skills-knowledge-workers"],
+  },
+  "ai-prompts-customer-success": {
+    title: "AI Prompts for Customer Success Managers: Retain More, Expand Faster",
+    excerpt: "Onboarding agendas, QBR summaries, at-risk account emails, expansion conversations — all in bracket-prompt format.",
+    category: "By Profession", readTime: "5 min",
+    related: ["how-to-write-better-ai-prompts", "context-engineering-guide"],
+  },
+  "ai-prompts-contractors": {
+    title: "AI Prompts for Contractors and Handymen: Win More Jobs, Get Paid Faster",
+    excerpt: "Project proposals, change orders, client updates, review requests — done-for-you prompts for tradespeople.",
+    category: "By Profession", readTime: "5 min",
+    related: ["how-to-write-better-ai-prompts", "best-ai-tools-small-business"],
+  },
+  "ai-prompts-mechanics": {
+    title: "AI Prompts for Auto Mechanics: Better Customer Communication, More Repeat Business",
+    excerpt: "Repair explanations, review requests, social posts, and customer follow-ups — prompt templates for auto shops.",
+    category: "By Profession", readTime: "5 min",
+    related: ["how-to-write-better-ai-prompts", "best-ai-tools-small-business"],
+  },
+  "ai-prompts-personal-trainers": {
+    title: "AI Prompts for Personal Trainers: Grow Your Client Base and Deliver Better Programs",
+    excerpt: "Training programs, client check-ins, social content, and sales scripts — prompt templates for fitness coaches.",
+    category: "By Profession", readTime: "5 min",
+    related: ["how-to-write-better-ai-prompts", "best-ai-tools-small-business"],
+  },
+  "ai-prompts-restaurant-owners": {
+    title: "AI Prompts for Restaurant Owners: Menu Copy, Reviews, and Marketing Without an Agency",
+    excerpt: "Menu descriptions, review responses, job postings, and social media — done-for-you prompts for restaurant operators.",
+    category: "By Profession", readTime: "5 min",
+    related: ["how-to-write-better-ai-prompts", "best-ai-tools-small-business"],
+  },
+  "best-ai-tools-small-business": {
+    title: "Best AI Tools for Small Business Owners in 2026",
+    excerpt: "ChatGPT, Claude, Gemini — what they're actually good for, where they fall short, and what small business owners use them for most.",
+    category: "Tools", readTime: "6 min",
+    related: ["how-to-write-better-ai-prompts", "ai-replacing-knowledge-workers"],
+  },
+  "how-to-write-better-ai-prompts": {
+    title: "How to Write Better AI Prompts: The Bracket Method",
+    excerpt: "The simple system that consistently produces professional-grade AI output — and why most prompts fail.",
+    category: "Getting Started", readTime: "5 min",
+    related: ["claude-prompting-guide-professionals", "context-engineering-guide"],
+  },
+  "ai-vs-copywriter": {
+    title: "AI vs. Copywriter: Should You Hire a Human or Use AI in 2026?",
+    excerpt: "An honest breakdown of where AI wins, where humans win, and the hybrid approach most businesses should use.",
+    category: "Deep Dive", readTime: "6 min",
+    related: ["how-to-write-better-ai-prompts", "ai-replacing-knowledge-workers"],
+  },
 };
 
 async function getPostContent(slug: string): Promise<string | null> {

@@ -15,6 +15,12 @@ const blogSlugs = [
   "workshift-ai-skills-knowledge-workers", "agentic-thinking-guide",
   "claude-vs-chatgpt-for-work", "ai-skills-for-lawyers",
   "how-to-train-team-on-ai", "90-day-ai-transformation",
+  "ai-prompts-real-estate-agents", "chatgpt-prompts-product-managers",
+  "ai-prompts-marketers", "ai-prompts-sales-reps", "chatgpt-prompts-hr-recruiters",
+  "ai-prompts-financial-advisors", "ai-prompts-teachers", "ai-prompts-customer-success",
+  "ai-prompts-contractors", "ai-prompts-mechanics", "ai-prompts-personal-trainers",
+  "ai-prompts-restaurant-owners", "best-ai-tools-small-business",
+  "how-to-write-better-ai-prompts", "ai-vs-copywriter",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
