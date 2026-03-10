@@ -36,7 +36,7 @@ export default function HomeHero() {
               </svg>
             </Link>
             <Link
-              href="/toolkits/real-estate"
+              href="/toolkits"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-md border border-[#e6ebf1] bg-white hover:border-[#c5cfe0] text-[#425466] font-medium text-base transition-colors"
             >
               See what&apos;s inside
