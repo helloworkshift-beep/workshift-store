@@ -161,6 +161,84 @@ const POST_META: Record<string, { title: string; excerpt: string; category: stri
     category: "Deep Dive", readTime: "6 min",
     related: ["how-to-write-better-ai-prompts", "ai-replacing-knowledge-workers"],
   },
+  "ai-prompts-electricians": {
+    title: "AI Prompts for Electricians: Work Smarter, Quote Faster, Communicate Better",
+    excerpt: "The best AI prompts for electricians — estimates, inspection reports, client follow-ups, apprentice training, and social media content.",
+    category: "Trades & Field Work", readTime: "6 min",
+    related: ["ai-prompts-contractors", "how-to-write-better-ai-prompts"],
+  },
+  "ai-prompts-nurses": {
+    title: "AI Prompts for Nurses: Save Time on Documentation, Education, and Communication",
+    excerpt: "How nurses are using ChatGPT and Claude for patient education, SBAR handoffs, care plans, NCLEX prep, and performance reviews.",
+    category: "Healthcare", readTime: "6 min",
+    related: ["how-to-write-better-ai-prompts", "workshift-ai-skills-knowledge-workers"],
+  },
+  "ai-prompts-accountants": {
+    title: "AI Prompts for Accountants and CPAs: Stop Writing, Start Advising",
+    excerpt: "The best AI prompts for accountants — client advisory emails, tax planning letters, engagement templates, and firm marketing content.",
+    category: "Finance", readTime: "6 min",
+    related: ["ai-prompts-financial-advisors", "how-to-write-better-ai-prompts"],
+  },
+  "ai-prompts-lawyers": {
+    title: "AI Prompts for Lawyers: Draft Faster, Research Smarter, Communicate Clearly",
+    excerpt: "How lawyers are using AI for client correspondence, demand letters, engagement templates, and legal marketing — with important caveats.",
+    category: "Legal", readTime: "6 min",
+    related: ["ai-skills-for-lawyers", "how-to-write-better-ai-prompts"],
+  },
+  "ai-prompts-consultants": {
+    title: "AI Prompts for Consultants: Deliver More, Write Less",
+    excerpt: "How consultants use AI to write proposals, case studies, executive summaries, workshop agendas, and thought leadership content faster.",
+    category: "Professional Services", readTime: "7 min",
+    related: ["how-to-write-better-ai-prompts", "ai-replacing-knowledge-workers"],
+  },
+  "ai-prompts-architects": {
+    title: "AI Prompts for Architects: Write Faster, Present Better, Win More Projects",
+    excerpt: "AI prompts for architects covering design narratives, project proposals, award submissions, client communication, and firm marketing.",
+    category: "Design & Creative", readTime: "6 min",
+    related: ["how-to-write-better-ai-prompts", "ai-prompts-consultants"],
+  },
+  "ai-prompts-freelancers": {
+    title: "AI Prompts for Freelancers: Win More Clients, Deliver Faster, Earn More",
+    excerpt: "The best AI prompts for freelancers — proposals, SOWs, rate increase emails, case studies, client communication, and LinkedIn content.",
+    category: "Freelance & Independent Work", readTime: "7 min",
+    related: ["how-to-write-better-ai-prompts", "best-ai-tools-small-business"],
+  },
+  "ai-prompts-project-managers": {
+    title: "AI Prompts for Project Managers: Less Admin, More Delivery",
+    excerpt: "AI prompts for project managers — project charters, status reports, risk registers, escalation emails, and retrospective guides.",
+    category: "Project Management", readTime: "6 min",
+    related: ["chatgpt-prompts-product-managers", "how-to-write-better-ai-prompts"],
+  },
+  "ai-prompts-social-media-managers": {
+    title: "AI Prompts for Social Media Managers: Create More, Scroll Less",
+    excerpt: "How social media managers use AI to batch content, repurpose blog posts, write ad copy, manage communities, and report results.",
+    category: "Marketing & Content", readTime: "7 min",
+    related: ["ai-prompts-marketers", "how-to-write-better-ai-prompts"],
+  },
+  "ai-prompts-coaches": {
+    title: "AI Prompts for Coaches: Scale Your Impact Without Burning Out",
+    excerpt: "AI prompts for coaches covering discovery calls, client intake, session follow-ups, journaling prompts, course content, and marketing.",
+    category: "Coaching & Training", readTime: "7 min",
+    related: ["how-to-write-better-ai-prompts", "workshift-ai-skills-knowledge-workers"],
+  },
+  "ai-prompts-writers": {
+    title: "AI Prompts for Writers and Content Creators: Produce More, Get Blocked Less",
+    excerpt: "How writers use AI to beat writer's block, write better outlines, improve drafts, pitch editors, and handle client communication.",
+    category: "Writing & Content", readTime: "7 min",
+    related: ["ai-vs-copywriter", "how-to-write-better-ai-prompts"],
+  },
+  "chatgpt-prompts-ux-designers": {
+    title: "ChatGPT Prompts for UX Designers: Research, Writing, and Thinking Faster",
+    excerpt: "AI prompts for UX designers — discussion guides, research synthesis, report writing, microcopy, portfolio case studies, and more.",
+    category: "Design & Product", readTime: "7 min",
+    related: ["how-to-write-better-ai-prompts", "chatgpt-prompts-product-managers"],
+  },
+  "ai-prompts-operations-managers": {
+    title: "AI Prompts for Operations Managers: Document More, Firefight Less",
+    excerpt: "How operations managers use AI to write SOPs, process improvement memos, vendor emails, incident reports, and onboarding plans.",
+    category: "Operations", readTime: "6 min",
+    related: ["how-to-write-better-ai-prompts", "best-ai-tools-small-business"],
+  },
 };
 
 async function getPostContent(slug: string): Promise<string | null> {

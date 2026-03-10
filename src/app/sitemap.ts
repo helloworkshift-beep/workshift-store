@@ -21,6 +21,12 @@ const blogSlugs = [
   "ai-prompts-contractors", "ai-prompts-mechanics", "ai-prompts-personal-trainers",
   "ai-prompts-restaurant-owners", "best-ai-tools-small-business",
   "how-to-write-better-ai-prompts", "ai-vs-copywriter",
+  "ai-prompts-electricians", "ai-prompts-nurses", "ai-prompts-accountants",
+  "ai-prompts-lawyers", "ai-prompts-consultants", "ai-prompts-architects",
+  "ai-prompts-freelancers", "ai-prompts-project-managers",
+  "ai-prompts-social-media-managers", "ai-prompts-coaches",
+  "ai-prompts-writers", "chatgpt-prompts-ux-designers",
+  "ai-prompts-operations-managers",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

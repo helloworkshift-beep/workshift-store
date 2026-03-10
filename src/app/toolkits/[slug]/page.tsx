@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Footer from "@/components/Footer";
 import { PageHero } from "@/components/ui";
-import { productSchema, breadcrumbSchema } from "@/lib/schema";
+import { productSchema, breadcrumbSchema, faqSchema } from "@/lib/schema";
 
 /* ─────────────────────────────────────────────
    Product data
@@ -1004,11 +1004,34 @@ export default async function ToolkitPage({
     { name: "Toolkits", url: "https://workshift.store/toolkits" },
     { name: `${kit.name} Toolkit`, url: `https://workshift.store/toolkits/${slug}` },
   ]);
+  const faq = faqSchema([
+    {
+      q: `What is the ${kit.name} AI Prompt Toolkit?`,
+      a: `The ${kit.name} AI Prompt Toolkit is a collection of ${kit.prompts} done-for-you AI prompts designed specifically for ${kit.name.toLowerCase()}s. Each prompt is formatted in the bracket method — you fill in your specifics and get professional-quality output from ChatGPT, Claude, or Gemini in seconds.`,
+    },
+    {
+      q: `Does this work with ChatGPT and Claude?`,
+      a: `Yes. Every prompt in the toolkit works with ChatGPT (GPT-4 or above), Claude (any version), and Google Gemini. No special setup or plugins required — just copy, fill in the brackets, and paste.`,
+    },
+    {
+      q: `Is this a subscription or a one-time purchase?`,
+      a: `One-time purchase. You pay $${kit.price} once and get lifetime access to all ${kit.prompts} prompts. No recurring fees, no membership required.`,
+    },
+    {
+      q: `How quickly will I get access after purchasing?`,
+      a: `Instantly. You'll receive a download link immediately after checkout. The toolkit is a digital product — no shipping, no waiting.`,
+    },
+    {
+      q: `I'm new to AI. Will this still work for me?`,
+      a: `Yes — the toolkit is designed for professionals who are new to AI. Every prompt includes clear instructions and bracket placeholders that tell you exactly what to fill in. No technical knowledge required.`,
+    },
+  ]);
 
   return (
     <main className="min-h-screen bg-white">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(product) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faq) }} />
       {/* Hero */}
       <PageHero
         eyebrow={`${kit.prompts} prompts · One-time purchase`}
