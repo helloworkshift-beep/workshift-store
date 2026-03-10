@@ -35,6 +35,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/toolkits`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.9 },
     { url: `${BASE}/course`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
     { url: `${BASE}/blog`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.8 },
+    { url: `${BASE}/bundle`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.85 },
+    { url: `${BASE}/ai-prompts-for`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
     ...toolkitSlugs.map((slug) => ({
       url: `${BASE}/toolkits/${slug}`,
       lastModified: new Date(),
