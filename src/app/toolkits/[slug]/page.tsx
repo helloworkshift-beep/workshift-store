@@ -384,6 +384,510 @@ const toolkits = {
     ],
   },
 
+  "financial-advisor": {
+    slug: "financial-advisor",
+    name: "Financial Advisor",
+    badge: "📈",
+    prompts: "90+",
+    price: 67,
+    stripeLink: "/api/checkout?product=financial-advisor-toolkit",
+    colorBar: "from-green-500 to-emerald-600",
+    tagline: "Client reports, proposals, and communications — done in minutes.",
+    subheadline:
+      "90+ AI prompts for financial advisors and wealth managers. From quarterly reviews to prospect outreach — professional, compliant-friendly language without the blank-page paralysis.",
+    tags: ["Client reports", "Prospect outreach", "Quarterly reviews", "Planning summaries"],
+    features: [
+      {
+        icon: "📊",
+        title: "Quarterly & Annual Reviews",
+        desc: "Turn portfolio data into clear, reassuring client summaries that explain performance, reinforce strategy, and build long-term trust.",
+      },
+      {
+        icon: "🤝",
+        title: "Prospect Outreach",
+        desc: "Cold emails, LinkedIn messages, referral follow-ups, and seminar invitations that open doors without sounding like a pitch.",
+      },
+      {
+        icon: "📋",
+        title: "Financial Planning Summaries",
+        desc: "Summarize complex financial plans — retirement projections, risk assessments, estate planning — in plain language clients actually understand.",
+      },
+      {
+        icon: "💌",
+        title: "Client Communication",
+        desc: "Market volatility reassurance emails, birthday/anniversary touchpoints, milestone check-ins, and life event follow-ups that strengthen relationships.",
+      },
+      {
+        icon: "🎤",
+        title: "Seminars & Events",
+        desc: "Invitation copy, event agendas, follow-up sequences, and presentation outlines for client education events and webinars.",
+      },
+      {
+        icon: "📰",
+        title: "Newsletters & Thought Leadership",
+        desc: "Monthly client newsletters, LinkedIn articles, and market commentary that position you as a trusted expert — not just a transaction processor.",
+      },
+    ],
+    samplePrompts: [
+      {
+        label: "Quarterly Portfolio Review Email",
+        prompt:
+          "Write a quarterly portfolio review email for a client whose portfolio returned [X%] vs benchmark [Y%]. They're in a [CONSERVATIVE/MODERATE/AGGRESSIVE] allocation. Key market events this quarter: [LIST]. Tone: calm, reassuring, forward-looking. 200 words max. No jargon.",
+      },
+      {
+        label: "Market Volatility Client Email",
+        prompt:
+          "Write a client email addressing recent market volatility (markets down [X%] this month). Acknowledge the discomfort, explain why staying the course aligns with their [GOAL], and reinforce our long-term strategy without dismissing their concern. Warm, confident tone. Under 250 words.",
+      },
+    ],
+    whoItsFor: [
+      "Independent RIAs who want to write client-facing content faster without sacrificing quality or compliance readability",
+      "Wirehouse advisors building their personal brand and book of business with consistent communication",
+      "Fee-only planners who want to be known as educators, not just asset managers",
+    ],
+  },
+
+  "teacher": {
+    slug: "teacher",
+    name: "Teacher & Educator",
+    badge: "🎓",
+    prompts: "100+",
+    price: 47,
+    stripeLink: "/api/checkout?product=teacher-toolkit",
+    colorBar: "from-sky-500 to-blue-600",
+    tagline: "Lesson plans, parent comms, and reports — all done faster.",
+    subheadline:
+      "100+ AI prompts built for K-12 teachers, tutors, and educators. Spend less time on paperwork and more time actually teaching.",
+    tags: ["Lesson plans", "Parent communication", "Assessments", "Reports"],
+    features: [
+      {
+        icon: "📚",
+        title: "Lesson Plans",
+        desc: "Generate complete lesson plans with objectives, activities, differentiation strategies, and assessment criteria — in minutes instead of hours.",
+      },
+      {
+        icon: "✉️",
+        title: "Parent Communication",
+        desc: "Progress updates, behavior concerns, celebration messages, newsletter drafts, and parent meeting prep — always professional, never generic.",
+      },
+      {
+        icon: "📝",
+        title: "Assessments & Rubrics",
+        desc: "Create quizzes, tests, project rubrics, and exit tickets aligned to your learning objectives. Easy to adapt for different levels.",
+      },
+      {
+        icon: "📋",
+        title: "Student Reports",
+        desc: "Report card comment banks, progress narratives, IEP contribution summaries, and end-of-year assessments that are personal and specific.",
+      },
+      {
+        icon: "🏫",
+        title: "Classroom Management",
+        desc: "Class rules, behavior plans, student goal-setting scripts, and restorative conversation frameworks that build a positive classroom culture.",
+      },
+      {
+        icon: "🧑‍💻",
+        title: "Professional Development",
+        desc: "Self-reflection prompts, peer observation notes, PD session planning, and personal teaching philosophy writing for portfolios and reviews.",
+      },
+    ],
+    samplePrompts: [
+      {
+        label: "Lesson Plan Generator",
+        prompt:
+          "Create a 45-minute lesson plan for [SUBJECT], [GRADE LEVEL], on the topic of [TOPIC]. Learning objective: students will be able to [OBJECTIVE]. Include: warm-up (5 min), direct instruction (15 min), guided practice (15 min), independent activity (10 min). Note differentiation strategies for early finishers and struggling students.",
+      },
+      {
+        label: "Parent Progress Email",
+        prompt:
+          "Write a progress update email to the parent of [STUDENT NAME], a [GRADE] student. Strengths: [LIST]. Areas for growth: [LIST]. Recent wins: [EXAMPLE]. Tone: warm, honest, collaborative. Include one specific action both school and home can take. Under 200 words.",
+      },
+    ],
+    whoItsFor: [
+      "K-12 classroom teachers who spend too many evenings on admin instead of prep",
+      "Tutors and learning coaches who want to deliver more personalized communication to students and parents",
+      "Department heads and instructional coaches who need to support teachers with reusable planning templates",
+    ],
+  },
+
+  "customer-success": {
+    slug: "customer-success",
+    name: "Customer Success Manager",
+    badge: "🌟",
+    prompts: "95+",
+    price: 57,
+    stripeLink: "/api/checkout?product=customer-success-toolkit",
+    colorBar: "from-teal-500 to-cyan-600",
+    tagline: "Retain more customers. Expand accounts. Build loyalty that lasts.",
+    subheadline:
+      "95+ prompts for CSMs at SaaS companies — from onboarding sequences to QBR prep. Stop writing from scratch for every customer and start delivering a consistently excellent experience.",
+    tags: ["Onboarding", "QBRs", "Risk escalations", "Expansion"],
+    features: [
+      {
+        icon: "🚀",
+        title: "Onboarding",
+        desc: "Welcome sequences, kickoff meeting agendas, success plan templates, and early adoption prompts that set the right tone from day one.",
+      },
+      {
+        icon: "📊",
+        title: "QBR & Business Reviews",
+        desc: "QBR decks, executive summaries, ROI calculators, and success story framing that make the business case for renewal obvious.",
+      },
+      {
+        icon: "🔴",
+        title: "Risk & Churn Prevention",
+        desc: "Early warning check-ins, re-engagement campaigns, executive escalation scripts, and save plays for accounts showing churn signals.",
+      },
+      {
+        icon: "📈",
+        title: "Expansion & Upsell",
+        desc: "Expansion conversation scripts, case studies, upgrade proposals, and multi-stakeholder outreach for accounts ready to grow.",
+      },
+      {
+        icon: "💌",
+        title: "Ongoing Communication",
+        desc: "Monthly health check emails, feature adoption nudges, NPS follow-ups, and renewal conversations that feel personal at scale.",
+      },
+      {
+        icon: "📋",
+        title: "Internal Documentation",
+        desc: "Account health summaries, handoff notes, escalation write-ups, and voice-of-customer synthesis for product teams.",
+      },
+    ],
+    samplePrompts: [
+      {
+        label: "QBR Executive Summary",
+        prompt:
+          "Write a QBR executive summary for [COMPANY NAME]. Product: [PRODUCT]. Contract value: [ACV]. Usage highlights: [METRICS]. Key wins this quarter: [LIST]. Open risks: [LIST]. Next quarter goals: [LIST]. Audience: VP/C-level. Focus on business outcomes, not feature usage. Max 300 words.",
+      },
+      {
+        label: "At-Risk Account Re-engagement",
+        prompt:
+          "Write an email to re-engage an at-risk customer at [COMPANY]. They've had low usage for [X] weeks and haven't responded to 2 touchpoints. Champion: [NAME], [TITLE]. Original goal when they signed: [GOAL]. Avoid desperation. Lead with value, offer a quick call. Under 120 words.",
+      },
+    ],
+    whoItsFor: [
+      "CSMs managing 20+ accounts who need to maintain quality communication without burning out",
+      "CS leads building scalable playbooks and onboarding templates for a growing team",
+      "Account managers at SaaS companies who own both retention and expansion quotas",
+    ],
+  },
+
+  "business-owner": {
+    slug: "business-owner",
+    name: "Business Owner",
+    badge: "🏢",
+    prompts: "100+",
+    price: 67,
+    stripeLink: "/api/checkout?product=business-owner-toolkit",
+    colorBar: "from-slate-600 to-gray-700",
+    tagline: "Run your business. Stop drowning in writing.",
+    subheadline:
+      "100+ prompts for small business owners, entrepreneurs, and founders. From investor updates to team announcements — professional writing for every part of running a business.",
+    tags: ["Team comms", "Client proposals", "Investor updates", "Operations"],
+    features: [
+      {
+        icon: "📨",
+        title: "Client Proposals & Pitches",
+        desc: "Business proposals, scope of work documents, partnership pitches, and pricing presentations that close deals and set clear expectations.",
+      },
+      {
+        icon: "📣",
+        title: "Team Communications",
+        desc: "Company updates, hiring announcements, policy changes, performance conversations, and culture-building messages your team will actually read.",
+      },
+      {
+        icon: "💰",
+        title: "Investor & Stakeholder Updates",
+        desc: "Monthly investor updates, board meeting summaries, fundraising narratives, and milestone announcements that build confidence.",
+      },
+      {
+        icon: "🌐",
+        title: "Marketing & Brand Copy",
+        desc: "Website copy, About Us pages, brand positioning statements, elevator pitches, and social media content that tells your story.",
+      },
+      {
+        icon: "📋",
+        title: "Operations",
+        desc: "SOPs, job descriptions, vendor RFPs, contract summaries, and process documentation that help you delegate and scale.",
+      },
+      {
+        icon: "🤝",
+        title: "Customer & Vendor Relations",
+        desc: "Client onboarding messages, difficult conversation scripts, vendor negotiation emails, and complaint resolution templates.",
+      },
+    ],
+    samplePrompts: [
+      {
+        label: "Client Proposal",
+        prompt:
+          "Write a business proposal for [PROSPECT COMPANY]. We are [YOUR COMPANY], a [DESCRIPTION]. They need help with [PROBLEM]. Our solution: [SOLUTION]. Timeline: [TIMELINE]. Investment: [PRICE RANGE]. Include: executive summary, problem statement, proposed approach, deliverables, and next steps. Professional but not stiff.",
+      },
+      {
+        label: "Monthly Investor Update",
+        prompt:
+          "Write a monthly investor update for [MONTH]. Company: [NAME]. Key metrics: [MRR/ARR/USERS/etc]. Highlights: [LIST 2-3 wins]. Challenges: [HONEST CHALLENGE]. What we need: [ASK if any]. Next month focus: [GOALS]. Tone: transparent, confident, data-driven. Max 400 words.",
+      },
+    ],
+    whoItsFor: [
+      "Solo founders and small business owners wearing every hat who need to write better, faster",
+      "Early-stage startup founders building credibility with investors, customers, and team members through clear communication",
+      "Operators taking over family businesses or scaling from solopreneur to small team",
+    ],
+  },
+
+  "mechanic": {
+    slug: "mechanic",
+    name: "Auto Mechanic",
+    badge: "🔧",
+    prompts: "85+",
+    price: 47,
+    stripeLink: "/api/checkout?product=mechanic-toolkit",
+    colorBar: "from-zinc-600 to-stone-700",
+    tagline: "Write better estimates, win more jobs, keep customers coming back.",
+    subheadline:
+      "85+ AI prompts for auto mechanics and shop owners. Customer communication, service estimates, review requests, and social content — all done without a marketing team.",
+    tags: ["Service estimates", "Customer follow-ups", "Reviews", "Shop marketing"],
+    features: [
+      {
+        icon: "🔩",
+        title: "Service Estimates & Explanations",
+        desc: "Write clear, plain-English explanations of what's wrong and why the repair is needed. Turn technical findings into approvals — without the hard sell.",
+      },
+      {
+        icon: "📱",
+        title: "Customer Text & Email Templates",
+        desc: "Vehicle ready notifications, diagnostic update messages, appointment reminders, and follow-up messages that make your shop look professional.",
+      },
+      {
+        icon: "⭐",
+        title: "Review Requests",
+        desc: "Post-service messages that ask for Google and Yelp reviews naturally — without being pushy. Includes response templates for both positive and negative reviews.",
+      },
+      {
+        icon: "📣",
+        title: "Social Media Content",
+        desc: "Before/after posts, maintenance tip content, seasonal specials, and shop spotlight posts for Facebook and Instagram that build local awareness.",
+      },
+      {
+        icon: "👷",
+        title: "Hiring & Team",
+        desc: "Job postings for technicians and service writers, onboarding checklists, and internal communications for your shop team.",
+      },
+      {
+        icon: "🎯",
+        title: "Promotions & Offers",
+        desc: "Oil change specials, seasonal campaigns, loyalty program announcements, and referral ask templates that drive repeat business.",
+      },
+    ],
+    samplePrompts: [
+      {
+        label: "Repair Estimate Explanation",
+        prompt:
+          "Write a plain-English explanation of a needed repair for a customer. Repair: [REPAIR NAME]. Root cause: [WHAT CAUSED IT]. What happens if they don't fix it: [CONSEQUENCE]. Estimated cost: [$AMOUNT]. Estimated time: [HOURS]. Tone: honest, helpful, not pushy. Keep it under 150 words.",
+      },
+      {
+        label: "Post-Service Review Request (SMS)",
+        prompt:
+          "Write a short SMS to send after completing a [SERVICE TYPE] for [CUSTOMER NAME]. Thank them, remind them what was done, and ask for a Google review with a natural, friendly tone. Include a placeholder for the review link. Under 60 words.",
+      },
+    ],
+    whoItsFor: [
+      "Independent shop owners who do all their own marketing and want to look more professional online",
+      "Service writers who want faster, better customer communication templates",
+      "Multi-bay shop managers standardizing communication across front-of-house staff",
+    ],
+  },
+
+  "contractor": {
+    slug: "contractor",
+    name: "Contractor & Handyman",
+    badge: "🏗️",
+    prompts: "85+",
+    price: 47,
+    stripeLink: "/api/checkout?product=contractor-toolkit",
+    colorBar: "from-orange-500 to-amber-600",
+    tagline: "Win more bids. Write better proposals. Get paid faster.",
+    subheadline:
+      "85+ AI prompts for contractors, handymen, and tradespeople. Quotes, scope of work documents, client updates, review requests — all the writing you hate, done in minutes.",
+    tags: ["Project proposals", "Scope of work", "Client updates", "Reviews"],
+    features: [
+      {
+        icon: "📄",
+        title: "Project Proposals & Quotes",
+        desc: "Write professional, detailed project proposals that justify your price, set clear expectations, and beat competitors who send a single line quote.",
+      },
+      {
+        icon: "📋",
+        title: "Scope of Work Documents",
+        desc: "Detailed SOWs that protect you legally, prevent scope creep, and ensure the client knows exactly what's included — and what isn't.",
+      },
+      {
+        icon: "💬",
+        title: "Client Update Messages",
+        desc: "Progress updates, delay notifications, change order requests, and project completion messages that keep clients informed and happy.",
+      },
+      {
+        icon: "💰",
+        title: "Invoicing & Collections",
+        desc: "Professional invoice cover notes, payment reminder sequences, and late payment escalation emails that get you paid without burning the relationship.",
+      },
+      {
+        icon: "⭐",
+        title: "Reviews & Referrals",
+        desc: "Post-project review request messages, referral ask scripts, and responses to online reviews (good and bad) that build your local reputation.",
+      },
+      {
+        icon: "📣",
+        title: "Social & Local Marketing",
+        desc: "Project showcase posts, before/after captions, seasonal promotion copy, and Google Business profile content that keeps your pipeline full.",
+      },
+    ],
+    samplePrompts: [
+      {
+        label: "Project Proposal",
+        prompt:
+          "Write a professional project proposal for a [PROJECT TYPE] job. Client: [NAME]. Location: [CITY]. Scope: [DESCRIBE WORK]. Timeline: [DURATION]. Estimated cost: [$AMOUNT]. Include: brief intro, what's included, what's not included, timeline, payment terms, and a simple call to action. Tone: professional but approachable.",
+      },
+      {
+        label: "Change Order Request",
+        prompt:
+          "Write a change order request message for a client. Project: [PROJECT]. Original scope: [ORIGINAL]. Newly discovered issue: [ISSUE]. Additional cost: [$AMOUNT]. Additional time: [DURATION]. Tone: matter-of-fact, not apologetic. Explain why it's necessary, what it involves, and ask for approval to proceed.",
+      },
+    ],
+    whoItsFor: [
+      "Solo contractors and handymen who want to win more jobs with better-looking proposals",
+      "Small construction companies standardizing their client communication and documentation",
+      "Tradespeople transitioning to running their own business who need a professional writing system fast",
+    ],
+  },
+
+  "personal-trainer": {
+    slug: "personal-trainer",
+    name: "Personal Trainer",
+    badge: "💪",
+    prompts: "90+",
+    price: 47,
+    stripeLink: "/api/checkout?product=personal-trainer-toolkit",
+    colorBar: "from-red-500 to-rose-600",
+    tagline: "Grow your client base. Deliver better programs. Keep clients for life.",
+    subheadline:
+      "90+ AI prompts for personal trainers, fitness coaches, and gym owners. Client programs, check-in messages, social content, and sales scripts — so you can focus on training, not typing.",
+    tags: ["Training programs", "Client check-ins", "Social content", "Sales scripts"],
+    features: [
+      {
+        icon: "🏋️",
+        title: "Training Programs",
+        desc: "Generate structured training programs for different goals — fat loss, muscle gain, athletic performance — with progressive overload, sets, reps, and coaching notes.",
+      },
+      {
+        icon: "🥗",
+        title: "Nutrition Guidance",
+        desc: "Macro-friendly meal frameworks, grocery list templates, nutrition coaching language, and habit-based guidance you can send to clients with confidence.",
+      },
+      {
+        icon: "💬",
+        title: "Client Check-Ins",
+        desc: "Weekly check-in templates, progress review messages, motivational follow-ups, and plateau-busting conversations that keep clients engaged between sessions.",
+      },
+      {
+        icon: "📱",
+        title: "Social Media Content",
+        desc: "Transformation story posts, tip-of-the-week content, myth-busting posts, and behind-the-scenes content that builds your online following.",
+      },
+      {
+        icon: "💰",
+        title: "Sales & Onboarding",
+        desc: "Discovery call scripts, package proposal templates, objection handling for pricing, and onboarding questionnaires that set up the client relationship right.",
+      },
+      {
+        icon: "🎯",
+        title: "Retention & Referrals",
+        desc: "Milestone celebration messages, accountability prompts for drifting clients, re-engagement scripts, and referral ask templates.",
+      },
+    ],
+    samplePrompts: [
+      {
+        label: "12-Week Training Program Outline",
+        prompt:
+          "Create a 12-week beginner training program for a client whose goal is [GOAL]. Equipment available: [GYM / HOME / MINIMAL]. Training days per week: [X]. Include: phase breakdown (e.g., adaptation → progressive → peak), weekly session structure, sets/reps guidance, and key coaching notes per phase. Keep language simple and motivating.",
+      },
+      {
+        label: "Plateau Client Check-In Message",
+        prompt:
+          "Write a check-in message to a client who has hit a [WEIGHT LOSS / STRENGTH / PERFORMANCE] plateau. They've been consistent for [X] weeks. Acknowledge the frustration, explain why plateaus happen, and suggest [2 ADJUSTMENTS]. Tone: empathetic, coach-like, energizing. Not clinical. Under 150 words.",
+      },
+    ],
+    whoItsFor: [
+      "In-person and online coaches who want to scale their client base without sacrificing personalized communication",
+      "Gym owners and studio managers who want to standardize the coaching experience across their team",
+      "New trainers building a client base from scratch who need professional materials without a big budget",
+    ],
+  },
+
+  "restaurant-owner": {
+    slug: "restaurant-owner",
+    name: "Restaurant Owner",
+    badge: "🍽️",
+    prompts: "85+",
+    price: 47,
+    stripeLink: "/api/checkout?product=restaurant-owner-toolkit",
+    colorBar: "from-yellow-500 to-orange-500",
+    tagline: "Menus, marketing, and management — without the agency price tag.",
+    subheadline:
+      "85+ AI prompts for restaurant owners, café operators, and food service managers. Menu copy, staff communication, review responses, and social content — all done fast.",
+    tags: ["Menu copy", "Social media", "Staff comms", "Review responses"],
+    features: [
+      {
+        icon: "🍴",
+        title: "Menu Descriptions",
+        desc: "Write appetite-inducing menu item descriptions that sell the dish — not just list the ingredients. Works for fine dining, casual, and fast casual.",
+      },
+      {
+        icon: "📱",
+        title: "Social Media Content",
+        desc: "Daily specials, behind-the-scenes posts, event announcements, holiday promotions, and mouth-watering food photography captions for Instagram and Facebook.",
+      },
+      {
+        icon: "⭐",
+        title: "Review Management",
+        desc: "Thoughtful, professional responses to Google and Yelp reviews — positive and negative — that build your reputation instead of burning it.",
+      },
+      {
+        icon: "👨‍🍳",
+        title: "Staff Communication",
+        desc: "Job postings, training materials, policy updates, schedule change notices, and team meeting agendas that keep your staff informed and engaged.",
+      },
+      {
+        icon: "📧",
+        title: "Customer Outreach",
+        desc: "Email newsletters, loyalty program announcements, event invitations, and birthday offers that bring guests back more often.",
+      },
+      {
+        icon: "🤝",
+        title: "Vendor & Operations",
+        desc: "Vendor outreach emails, supply shortage communication, catering inquiry responses, and operational announcement templates.",
+      },
+    ],
+    samplePrompts: [
+      {
+        label: "Menu Item Description",
+        prompt:
+          "Write a menu description for [DISH NAME]. Key ingredients: [LIST]. Cooking method: [METHOD]. Flavor profile: [DESCRIPTION]. Allergens: [IF ANY]. Restaurant style: [FINE DINING / CASUAL / FAST CASUAL]. Keep it under 40 words. Make it sound irresistible without being over the top.",
+      },
+      {
+        label: "Response to Negative Review",
+        prompt:
+          "Write a professional, empathetic response to this negative restaurant review: [PASTE REVIEW]. Acknowledge the experience, take responsibility without being defensive, explain what we're doing about it, and invite them back. Tone: warm, genuine, not corporate. Under 100 words.",
+      },
+    ],
+    whoItsFor: [
+      "Independent restaurant and café owners who don't have a marketing team but need to look like they do",
+      "Food truck operators and pop-up chefs building a following on social media",
+      "Restaurant managers handling front-of-house communication and staff coordination",
+    ],
+  },
+
   "hr-recruiter": {
     slug: "hr-recruiter",
     name: "HR & Recruiter",
