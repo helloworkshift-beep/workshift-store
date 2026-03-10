@@ -1,4 +1,6 @@
 import Link from "next/link";
+import Footer from "@/components/Footer";
+import { PageHero, Section, Container, Badge, Button } from "@/components/ui";
 
 export const metadata = {
   title: "AI Prompt Toolkits for Professionals — Workshift",
@@ -192,95 +194,64 @@ const toolkits = [
 
 export default function Toolkits() {
   return (
-    <main className="min-h-screen bg-[#faf9f6]">
-      {/* Header */}
-      <div className="bg-white border-b border-[#ede8df] px-4 py-16 text-center">
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#c9a84c]/30 bg-[#c9a84c]/8 text-[#8a6a1f] text-sm font-medium mb-6">
-          AI Prompt Toolkits for Professionals
-        </div>
-        <h1 className="text-4xl sm:text-5xl font-bold text-[#1c3557] mb-4">
-          Your role. Your prompts.
-        </h1>
-        <p className="text-[#718096] text-xl max-w-2xl mx-auto">
-          Done-for-you AI prompt toolkits built specifically for how you work.
-          Stop writing from scratch.
-        </p>
-      </div>
+    <div className="min-h-screen bg-white">
+      <PageHero
+        eyebrow="AI Prompt Toolkits"
+        title="Your role. Your prompts."
+        subtitle="Done-for-you AI prompt toolkits built specifically for how you work. Not generic — built for your profession."
+        centered
+      />
 
-      {/* Toolkits grid */}
-      <div className="max-w-6xl mx-auto px-4 py-16">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {toolkits.map((kit) => (
-            <div key={kit.slug} className={`relative rounded-2xl bg-white border border-[#ede8df] overflow-hidden card-shadow ${kit.status === "coming" ? "opacity-75" : ""}`}>
-              {kit.status === "coming" && (
-                <div className="absolute top-4 right-4 px-2.5 py-1 rounded-full bg-[#f0ece3] text-[#8a6a1f] text-xs font-medium">
-                  Coming soon
-                </div>
-              )}
-              {kit.status === "live" && (
-                <div className="absolute top-4 right-4 px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700 text-xs font-medium">
-                  ✓ Available now
-                </div>
-              )}
-
-              {/* Color bar */}
-              <div className={`h-1 bg-gradient-to-r ${kit.color}`} />
-
-              <div className="p-6">
-                <div className="text-4xl mb-4">{kit.badge}</div>
-                <h2 className="text-[#1c3557] font-bold text-xl mb-1">{kit.name} Toolkit</h2>
-                <p className="text-[#718096] text-sm mb-4">{kit.tagline}</p>
-
-                <div className="flex flex-wrap gap-2 mb-5">
-                  {kit.tags.map(tag => (
-                    <span key={tag} className="px-2.5 py-1 rounded-full bg-[#f0ece3] text-[#4a5568] text-xs">{tag}</span>
-                  ))}
-                </div>
-
-                <div className="flex items-center justify-between pt-4 border-t border-[#f0ece3]">
-                  <div>
-                    <span className="text-2xl font-black text-[#1c3557]">${kit.price}</span>
-                    <span className="text-[#a0aec0] text-xs ml-1">one-time</span>
+      <Section bg="gray" border>
+        <Container>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {toolkits.map((kit) => (
+              <Link
+                key={kit.slug}
+                href={`/toolkits/${kit.slug}`}
+                className="group bg-white rounded-xl border border-[#e6ebf1] hover:border-[#635bff]/30 hover:shadow-md transition-all overflow-hidden"
+              >
+                <div className={`h-0.5 bg-gradient-to-r ${kit.color}`} />
+                <div className="p-6">
+                  <div className="flex items-start justify-between mb-4">
+                    <div>
+                      <h2 className="font-semibold text-[#0a2540] text-base group-hover:text-[#635bff] transition-colors">
+                        {kit.name}
+                      </h2>
+                      <p className="text-[#425466] text-sm mt-1 leading-snug">{kit.tagline}</p>
+                    </div>
                   </div>
-                  {kit.status === "live" ? (
-                    <a href={kit.stripeLink}
-                      className="px-4 py-2 rounded-xl bg-[#1c3557] hover:bg-[#2a4f7c] text-white text-sm font-semibold transition-colors">
+                  <div className="flex flex-wrap gap-1.5 mb-5">
+                    {kit.tags.map(tag => (
+                      <Badge key={tag}>{tag}</Badge>
+                    ))}
+                  </div>
+                  <div className="flex items-center justify-between pt-4 border-t border-[#e6ebf1]">
+                    <div>
+                      <span className="text-xl font-extrabold text-[#0a2540]">${kit.price}</span>
+                      <span className="text-[#8898aa] text-xs ml-1">one-time</span>
+                    </div>
+                    <span className="text-sm text-[#635bff] font-medium group-hover:underline">
                       Get access →
-                    </a>
-                  ) : (
-                    <span className="px-4 py-2 rounded-xl bg-[#f0ece3] text-[#a0aec0] text-sm font-medium cursor-not-allowed">
-                      Coming soon
                     </span>
-                  )}
+                  </div>
                 </div>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Bundle teaser */}
-        <div className="mt-12 rounded-2xl bg-[#1c3557] p-8 text-center">
-          <div className="text-4xl mb-4">📦</div>
-          <h2 className="text-2xl font-bold text-white mb-3">The Complete Bundle</h2>
-          <p className="text-[#94b4d4] mb-6 max-w-lg mx-auto">
-            All 7 toolkits. Every role covered. Get the complete bundle at a significant discount.
-          </p>
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 text-[#c9a84c] text-sm font-medium">
-            🔔 Bundle pricing coming soon
+              </Link>
+            ))}
           </div>
-        </div>
-      </div>
 
-      <footer className="border-t border-[#ede8df] px-4 py-8 bg-white">
-        <div className="max-w-6xl mx-auto flex flex-wrap items-center justify-between gap-4 text-[#a0aec0] text-sm">
-          <span>© 2026 Workshift</span>
-          <div className="flex gap-4">
-            <Link href="/legal/imprint" className="hover:text-[#1c3557] transition-colors">Imprint</Link>
-            <Link href="/legal/privacy" className="hover:text-[#1c3557] transition-colors">Privacy</Link>
-            <Link href="/legal/terms" className="hover:text-[#1c3557] transition-colors">Terms</Link>
+          {/* Bundle teaser */}
+          <div className="mt-8 rounded-xl bg-[#0a2540] p-8 text-center">
+            <h2 className="text-xl font-bold text-white mb-2">Complete Bundle</h2>
+            <p className="text-[#8898aa] mb-4 max-w-lg mx-auto text-sm">
+              All 15 toolkits at a significant discount. Every role, every workflow covered.
+            </p>
+            <Badge variant="purple">Coming soon</Badge>
           </div>
-        </div>
-      </footer>
-    </main>
+        </Container>
+      </Section>
+
+      <Footer />
+    </div>
   );
 }

@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
+import Footer from "@/components/Footer";
+import { PageHero } from "@/components/ui";
 
 /* ─────────────────────────────────────────────
    Product data
@@ -989,77 +991,66 @@ export default async function ToolkitPage({
   if (!kit) notFound();
 
   return (
-    <main className="min-h-screen bg-[#faf9f6]">
-      {/* Top accent bar */}
-      <div className={`h-1 bg-gradient-to-r ${kit.colorBar}`} />
+    <main className="min-h-screen bg-white">
+      {/* Hero */}
+      <PageHero
+        eyebrow={`${kit.prompts} prompts · One-time purchase`}
+        title={kit.tagline}
+        subtitle={kit.subheadline}
+        backHref="/toolkits"
+        backLabel="All toolkits"
+        centered
+        size="lg"
+      />
 
-      {/* ── Hero ── */}
-      <section className="bg-white border-b border-[#ede8df] px-4 py-20 text-center">
-        <div className="max-w-3xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#c9a84c]/30 bg-[#c9a84c]/8 text-[#8a6a1f] text-sm font-medium mb-6">
-            {kit.badge} {kit.prompts} prompts · One-time purchase
-          </div>
-          <h1 className="text-4xl sm:text-5xl font-bold text-[#1c3557] mb-5 leading-tight">
-            {kit.tagline}
-          </h1>
-          <p className="text-[#718096] text-xl mb-10 leading-relaxed">
-            {kit.subheadline}
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <a
-              href={kit.stripeLink}
-              className="px-8 py-4 rounded-xl bg-[#1c3557] hover:bg-[#2a4f7c] text-white text-base font-bold transition-colors shadow-lg"
-            >
-              Get the {kit.name} Toolkit — ${kit.price} →
-            </a>
-            <span className="text-[#a0aec0] text-sm">⚡ Instant download · No subscription</span>
-          </div>
+      {/* Buy CTA strip */}
+      <div className="bg-[#f6f9fc] border-b border-[#e6ebf1] px-6 py-5">
+        <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-[#8898aa] text-sm">Instant download · No subscription · Works with ChatGPT &amp; Claude</p>
+          <a
+            href={kit.stripeLink}
+            className="inline-flex items-center gap-2 px-6 py-2.5 rounded-md bg-[#635bff] hover:bg-[#5145e5] text-white text-sm font-medium transition-colors shadow-sm whitespace-nowrap"
+          >
+            Get the {kit.name} Toolkit — ${kit.price}
+            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            </svg>
+          </a>
         </div>
-      </section>
+      </div>
 
       {/* ── What's Inside ── */}
-      <section className="max-w-5xl mx-auto px-4 py-20">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-[#1c3557] mb-3">What&apos;s inside</h2>
-          <p className="text-[#718096] text-lg">
-            Every prompt is ready to use — just fill in your details and go.
-          </p>
+      <section className="max-w-6xl mx-auto px-6 py-20">
+        <div className="mb-10">
+          <p className="text-sm font-semibold text-[#635bff] uppercase tracking-widest mb-3">What&apos;s inside</p>
+          <h2 className="text-3xl font-extrabold text-[#0a2540] tracking-tight">Every prompt is ready to use.</h2>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {kit.features.map((f) => (
-            <div
-              key={f.title}
-              className="bg-white border border-[#ede8df] rounded-2xl p-6 hover:shadow-md transition-shadow"
-            >
-              <div className="text-3xl mb-3">{f.icon}</div>
-              <h3 className="text-[#1c3557] font-bold text-base mb-2">{f.title}</h3>
-              <p className="text-[#718096] text-sm leading-relaxed">{f.desc}</p>
+            <div key={f.title} className="bg-white border border-[#e6ebf1] rounded-xl p-6 hover:shadow-sm transition-shadow">
+              <div className="text-2xl mb-3">{f.icon}</div>
+              <h3 className="text-[#0a2540] font-semibold text-base mb-2">{f.title}</h3>
+              <p className="text-[#425466] text-sm leading-relaxed">{f.desc}</p>
             </div>
           ))}
         </div>
       </section>
 
       {/* ── Sample Prompts ── */}
-      <section className="bg-[#1c3557] px-4 py-20">
+      <section className="bg-[#0a2540] px-6 py-20">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-white mb-3">Sample prompts</h2>
-            <p className="text-[#94b4d4] text-lg">
-              Here&apos;s a taste of what&apos;s inside. Every prompt is editable and built to get great results.
-            </p>
+          <div className="mb-10">
+            <p className="text-sm font-semibold text-[#635bff] uppercase tracking-widest mb-3">Sample prompts</p>
+            <h2 className="text-3xl font-extrabold text-white tracking-tight">A taste of what&apos;s inside.</h2>
           </div>
-          <div className="space-y-5">
+          <div className="space-y-4">
             {kit.samplePrompts.map((sp) => (
-              <div key={sp.label} className="rounded-xl overflow-hidden">
-                <div className="bg-[#132640] px-5 py-2 border-b border-white/10">
-                  <span className="text-[#c9a84c] text-xs font-semibold uppercase tracking-wide">
-                    {sp.label}
-                  </span>
+              <div key={sp.label} className="rounded-lg overflow-hidden border border-white/10">
+                <div className="bg-white/5 px-5 py-2.5 border-b border-white/10">
+                  <span className="text-[#635bff] text-xs font-semibold uppercase tracking-widest">{sp.label}</span>
                 </div>
-                <div className="bg-[#0f1e30] px-5 py-5">
-                  <p className="text-[#cbd5e0] text-sm font-mono leading-relaxed whitespace-pre-wrap">
-                    {sp.prompt}
-                  </p>
+                <div className="bg-white/[0.03] px-5 py-5">
+                  <p className="text-[#94a3b8] text-sm font-mono leading-relaxed whitespace-pre-wrap">{sp.prompt}</p>
                 </div>
               </div>
             ))}
@@ -1068,44 +1059,45 @@ export default async function ToolkitPage({
       </section>
 
       {/* ── Who It's For ── */}
-      <section className="bg-white border-t border-b border-[#ede8df] px-4 py-20">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-[#1c3557] mb-10">Who it&apos;s for</h2>
-          <ul className="space-y-4 text-left">
+      <section className="bg-[#f6f9fc] border-y border-[#e6ebf1] px-6 py-20">
+        <div className="max-w-3xl mx-auto">
+          <p className="text-sm font-semibold text-[#635bff] uppercase tracking-widest mb-3">Who it&apos;s for</p>
+          <h2 className="text-3xl font-extrabold text-[#0a2540] tracking-tight mb-8">Built for the people doing the actual work.</h2>
+          <ul className="space-y-3">
             {kit.whoItsFor.map((persona, i) => (
-              <li key={i} className="flex items-start gap-4 bg-[#faf9f6] rounded-xl p-5 border border-[#ede8df]">
-                <span className="text-[#c9a84c] text-xl mt-0.5 flex-shrink-0">✓</span>
-                <span className="text-[#4a5568] text-base leading-relaxed">{persona}</span>
+              <li key={i} className="flex items-start gap-4 bg-white rounded-lg p-5 border border-[#e6ebf1]">
+                <svg className="w-5 h-5 text-[#635bff] mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
+                <span className="text-[#425466] text-base leading-relaxed">{persona}</span>
               </li>
             ))}
           </ul>
         </div>
       </section>
 
-      {/* ── CTA ── */}
-      <section className="px-4 py-24 text-center">
-        <div className="max-w-xl mx-auto">
-          <div className="text-5xl mb-6">{kit.badge}</div>
-          <h2 className="text-3xl sm:text-4xl font-bold text-[#1c3557] mb-4">
-            Ready to work smarter?
+      {/* ── Final CTA ── */}
+      <section className="px-6 py-24 text-center">
+        <div className="max-w-sm mx-auto">
+          <p className="text-sm font-semibold text-[#635bff] uppercase tracking-widest mb-4">Get instant access</p>
+          <h2 className="text-3xl font-extrabold text-[#0a2540] tracking-tight mb-2">
+            {kit.name} Toolkit
           </h2>
-          <p className="text-[#718096] text-lg mb-8">
-            One-time purchase. No subscriptions. Instant access to {kit.prompts} prompts.
+          <p className="text-[#8898aa] text-sm mb-8">
+            {kit.prompts} prompts · One-time purchase · Instant download
           </p>
 
-          <div className="bg-white border border-[#ede8df] rounded-2xl p-8 shadow-sm mb-6">
-            <div className="text-sm text-[#a0aec0] mb-1">One-time price</div>
-            <div className="text-5xl font-black text-[#1c3557] mb-1">${kit.price}</div>
-            <div className="text-[#a0aec0] text-sm mb-6">No recurring fees · Yours forever</div>
+          <div className="bg-white border border-[#e6ebf1] rounded-xl p-8 shadow-sm mb-4">
+            <div className="text-sm text-[#8898aa] mb-1">One-time price</div>
+            <div className="text-5xl font-black text-[#0a2540] mb-1">${kit.price}</div>
+            <div className="text-[#8898aa] text-xs mb-6">No recurring fees · Yours forever</div>
             <a
               href={kit.stripeLink}
-              className="block w-full py-4 rounded-xl bg-[#c9a84c] hover:bg-[#b8953e] text-white text-base font-bold transition-colors shadow-md"
+              className="block w-full py-3 rounded-md bg-[#635bff] hover:bg-[#5145e5] text-white text-sm font-semibold transition-colors"
             >
               Get instant access →
             </a>
-            <p className="text-[#a0aec0] text-xs mt-4">
-              ⚡ Instant download after purchase · Secure checkout
-            </p>
+            <p className="text-[#8898aa] text-xs mt-4">Secure checkout · Instant download</p>
           </div>
 
           <Link
@@ -1117,23 +1109,7 @@ export default async function ToolkitPage({
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="border-t border-[#ede8df] px-4 py-8 bg-white">
-        <div className="max-w-6xl mx-auto flex flex-wrap items-center justify-between gap-4 text-[#a0aec0] text-sm">
-          <span>© 2026 Workshift</span>
-          <div className="flex gap-4">
-            <Link href="/legal/imprint" className="hover:text-[#1c3557] transition-colors">
-              Imprint
-            </Link>
-            <Link href="/legal/privacy" className="hover:text-[#1c3557] transition-colors">
-              Privacy
-            </Link>
-            <Link href="/legal/terms" className="hover:text-[#1c3557] transition-colors">
-              Terms
-            </Link>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </main>
   );
 }
