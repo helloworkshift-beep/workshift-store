@@ -6,6 +6,8 @@ import remarkHtml from "remark-html";
 import Link from "next/link";
 import Footer from "@/components/Footer";
 import { notFound } from "next/navigation";
+import { Badge, Button } from "@/components/ui";
+import { articleSchema } from "@/lib/schema";
 
 const POST_META: Record<string, { title: string; excerpt: string; category: string; readTime: string; related?: string[] }> = {
   "ai-replacing-knowledge-workers": {
@@ -109,42 +111,54 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
     .map((s) => ({ slug: s, ...POST_META[s] }))
     .filter(Boolean);
 
+  const schema = articleSchema({ title: meta.title, excerpt: meta.excerpt, slug, date: "2026-03-10" });
+
   return (
-    <div className="min-h-screen bg-[#faf9f6]">
+    <div className="min-h-screen bg-white">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+
       <article className="max-w-3xl mx-auto px-6 py-16">
-        <div className="mb-8">
-          <Link href="/blog" className="text-sm text-[#c9a84c] hover:underline">← All articles</Link>
-          <div className="flex items-center gap-3 mt-4 mb-4">
-            <span className="text-xs font-semibold bg-[#1c3557]/10 text-[#1c3557] px-3 py-1 rounded-full">{meta.category}</span>
-            <span className="text-gray-400 text-sm">{meta.readTime} read</span>
+        {/* Header */}
+        <div className="mb-10">
+          <Link href="/blog" className="inline-flex items-center gap-1.5 text-sm text-[#8898aa] hover:text-[#0a2540] transition-colors mb-6">
+            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+            </svg>
+            All articles
+          </Link>
+          <div className="flex items-center gap-3 mb-4">
+            <Badge variant="purple">{meta.category}</Badge>
+            <span className="text-[#8898aa] text-sm">{meta.readTime} read</span>
           </div>
-          <h1 className="text-3xl md:text-4xl font-bold text-[#1c3557] leading-tight">{meta.title}</h1>
+          <h1 className="text-3xl md:text-4xl font-extrabold text-[#0a2540] leading-tight tracking-tight">{meta.title}</h1>
+          <p className="mt-4 text-lg text-[#425466] leading-relaxed">{meta.excerpt}</p>
         </div>
 
+        <hr className="border-[#e6ebf1] mb-10" />
+
+        {/* Body */}
         <div
-          className="prose prose-lg prose-headings:text-[#1c3557] prose-headings:font-bold prose-a:text-[#c9a84c] prose-strong:text-[#1c3557] prose-blockquote:border-[#c9a84c] prose-blockquote:bg-amber-50 prose-blockquote:py-1 prose-code:bg-gray-100 prose-code:px-1 prose-code:rounded max-w-none"
+          className="prose prose-lg max-w-none prose-headings:font-extrabold prose-headings:text-[#0a2540] prose-headings:tracking-tight prose-p:text-[#425466] prose-p:leading-relaxed prose-a:text-[#635bff] prose-a:no-underline hover:prose-a:underline prose-strong:text-[#0a2540] prose-code:bg-[#f6f9fc] prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:text-[#635bff] prose-code:font-mono prose-code:text-sm prose-blockquote:border-[#635bff] prose-blockquote:bg-[#f6f9fc] prose-blockquote:not-italic prose-li:text-[#425466]"
           dangerouslySetInnerHTML={{ __html: content }}
         />
 
-        {/* Course CTA */}
-        <div className="mt-16 bg-[#1c3557] rounded-2xl p-8 text-center">
-          <div className="text-[#c9a84c] text-sm font-semibold uppercase tracking-wider mb-3">The Workshift Course</div>
-          <h2 className="text-2xl font-bold text-white mb-3">Go from beginner to AI-native professional</h2>
-          <p className="text-white/60 mb-6">10 modules, 60+ lessons — built for every knowledge worker. Interactive, online, self-paced.</p>
-          <Link href="/course" className="inline-block bg-[#c9a84c] text-[#1c3557] font-bold px-8 py-3.5 rounded-xl hover:bg-[#c9a84c]/90 transition-colors">
-            See the full course →
-          </Link>
+        {/* Toolkit CTA */}
+        <div className="mt-16 bg-[#0a2540] rounded-xl p-8 text-center">
+          <p className="text-sm font-semibold text-[#635bff] uppercase tracking-widest mb-3">Workshift Toolkits</p>
+          <h2 className="text-2xl font-extrabold text-white mb-3">Get the done-for-you prompt toolkit for your role.</h2>
+          <p className="text-[#8898aa] mb-6">Fill-in-the-bracket prompts built for your exact profession. One-time purchase, instant download.</p>
+          <Button href="/toolkits" variant="primary">Browse all toolkits</Button>
         </div>
 
         {/* Related */}
         {relatedPosts.length > 0 && (
           <div className="mt-12">
-            <h3 className="text-lg font-bold text-[#1c3557] mb-4">Related articles</h3>
+            <h3 className="text-lg font-extrabold text-[#0a2540] mb-4">Related articles</h3>
             <div className="grid sm:grid-cols-2 gap-4">
               {relatedPosts.map((post) => post && (
-                <Link key={post.slug} href={`/blog/${post.slug}`} className="group block bg-white border border-[#ede8df] rounded-xl p-5 hover:border-[#c9a84c] transition-colors">
-                  <span className="text-xs text-gray-400 block mb-1">{post.readTime} read</span>
-                  <h4 className="font-semibold text-[#1c3557] group-hover:text-[#c9a84c] transition-colors text-sm leading-snug">{post.title}</h4>
+                <Link key={post.slug} href={`/blog/${post.slug}`} className="group block bg-white border border-[#e6ebf1] rounded-xl p-5 hover:border-[#635bff]/30 hover:shadow-sm transition-all">
+                  <Badge className="mb-2">{post.category}</Badge>
+                  <h4 className="font-semibold text-[#0a2540] group-hover:text-[#635bff] transition-colors text-sm leading-snug">{post.title}</h4>
                 </Link>
               ))}
             </div>

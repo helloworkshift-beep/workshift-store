@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Footer from "@/components/Footer";
 import { PageHero } from "@/components/ui";
+import { productSchema, breadcrumbSchema } from "@/lib/schema";
 
 /* ─────────────────────────────────────────────
    Product data
@@ -973,8 +974,15 @@ export async function generateMetadata({
   const kit = toolkits[slug as keyof typeof toolkits];
   if (!kit) return { title: "Not found" };
   return {
-    title: `${kit.name} AI Prompt Toolkit — Workshift`,
-    description: `${kit.subheadline} ${kit.prompts} prompts. One-time $${kit.price}.`,
+    title: `${kit.name} AI Prompt Toolkit — ${kit.prompts} Done-for-You Prompts`,
+    description: `${kit.tagline} ${kit.subheadline} ${kit.prompts} ready-to-use AI prompts. One-time $${kit.price}. Instant download.`,
+    keywords: [`AI prompts for ${kit.name.toLowerCase()}`, `ChatGPT prompts ${kit.name.toLowerCase()}`, `${kit.name.toLowerCase()} AI toolkit`, "done-for-you AI prompts"],
+    openGraph: {
+      title: `${kit.name} AI Prompt Toolkit — Workshift`,
+      description: `${kit.prompts} done-for-you AI prompts for ${kit.name.toLowerCase()}s. One-time $${kit.price}.`,
+      url: `https://workshift.store/toolkits/${slug}`,
+    },
+    alternates: { canonical: `https://workshift.store/toolkits/${slug}` },
   };
 }
 
@@ -990,8 +998,17 @@ export default async function ToolkitPage({
   const kit = toolkits[slug as keyof typeof toolkits];
   if (!kit) notFound();
 
+  const product = productSchema({ name: kit.name, slug, tagline: kit.tagline, subheadline: kit.subheadline, price: kit.price, prompts: kit.prompts });
+  const breadcrumb = breadcrumbSchema([
+    { name: "Home", url: "https://workshift.store" },
+    { name: "Toolkits", url: "https://workshift.store/toolkits" },
+    { name: `${kit.name} Toolkit`, url: `https://workshift.store/toolkits/${slug}` },
+  ]);
+
   return (
     <main className="min-h-screen bg-white">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(product) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
       {/* Hero */}
       <PageHero
         eyebrow={`${kit.prompts} prompts · One-time purchase`}
