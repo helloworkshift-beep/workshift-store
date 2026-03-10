@@ -12,13 +12,18 @@ function verifyToken(sessionId: string, token: string): boolean {
 
 const productMap: Record<string, string> = {
   "default": "real-estate-ai-prompt-toolkit.zip",
+  // Slugs matching webhook STRIPE_PRODUCT_MAP
   "real-estate": "real-estate-ai-prompt-toolkit.zip",
-  "pm": "pm-toolkit.zip",
-  "scrum": "scrum-master-toolkit.zip",
+  "product-manager": "pm-toolkit.zip",
+  "scrum-master": "scrum-master-toolkit.zip",
   "marketing": "marketing-toolkit.zip",
-  "ux-research": "user-research-toolkit.zip",
+  "user-research": "user-research-toolkit.zip",
   "sales-rep": "sales-rep-toolkit.zip",
   "hr-recruiter": "hr-recruiter-toolkit.zip",
+  // Legacy aliases (in case old links exist)
+  "pm": "pm-toolkit.zip",
+  "scrum": "scrum-master-toolkit.zip",
+  "ux-research": "user-research-toolkit.zip",
 };
 
 export async function GET(req: NextRequest) {

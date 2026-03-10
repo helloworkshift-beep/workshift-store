@@ -1,38 +1,33 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import Hero from "@/components/Hero";
+import HomeNav from "@/components/HomeNav";
+import HomeHero from "@/components/HomeHero";
+import HomeHowItWorks from "@/components/HomeHowItWorks";
+import HomeProductGrid from "@/components/HomeProductGrid";
+import HomeValueProps from "@/components/HomeValueProps";
+import HomeCTA from "@/components/HomeCTA";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Workshift — AI Skills for Knowledge Workers",
-  description: "Prompt toolkits, courses, and guides to help professionals use AI like Claude at work. Built for lawyers, marketers, PMs, and more.",
+  description:
+    "Done-for-you AI prompt toolkits for real estate agents, marketers, product managers, and more. Copy a prompt, fill in the brackets, get professional results in under 8 minutes.",
   openGraph: {
     title: "Workshift — AI Skills for Knowledge Workers",
-    description: "Prompt toolkits, courses, and guides to help professionals use AI like Claude at work.",
+    description:
+      "Done-for-you AI prompt toolkits for real estate agents, marketers, product managers, and more.",
     type: "website",
   },
 };
-import Features from "@/components/Features";
-import WhatsInside from "@/components/WhatsInside";
-import Pricing from "@/components/Pricing";
-import FAQ from "@/components/FAQ";
-import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#faf9f6] text-[#1a1a1a] overflow-x-hidden">
-      <nav className="bg-[#1c3557] px-6 py-4 flex justify-between items-center">
-        <Link href="/" className="text-[#c9a84c] font-bold text-lg">Workshift</Link>
-        <div className="flex gap-6 text-sm">
-          <Link href="/blog" className="text-white/70 hover:text-white transition-colors">Blog</Link>
-          <Link href="/toolkits" className="text-white/70 hover:text-white transition-colors">Toolkits</Link>
-          <Link href="/course" className="text-white/70 hover:text-white transition-colors">Course</Link>
-        </div>
-      </nav>
-      <Hero />
-      <Features />
-      <WhatsInside />
-      <Pricing />
-      <FAQ />
+    <main className="min-h-screen bg-white text-[#0a1628] overflow-x-hidden">
+      <HomeNav />
+      <HomeHero />
+      <HomeHowItWorks />
+      <HomeProductGrid />
+      <HomeValueProps />
+      <HomeCTA />
       <Footer />
     </main>
   );
