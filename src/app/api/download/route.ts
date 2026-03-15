@@ -24,6 +24,15 @@ const productMap: Record<string, string> = {
   "pm": "pm-toolkit.zip",
   "scrum": "scrum-master-toolkit.zip",
   "ux-research": "user-research-toolkit.zip",
+  // New toolkits
+  "financial-advisor": "financial-advisor-toolkit.zip",
+  "teacher": "teacher-toolkit.zip",
+  "customer-success": "customer-success-toolkit.zip",
+  "business-owner": "business-owner-toolkit.zip",
+  "mechanic": "mechanic-toolkit.zip",
+  "contractor": "contractor-toolkit.zip",
+  "personal-trainer": "personal-trainer-toolkit.zip",
+  "restaurant-owner": "restaurant-owner-toolkit.zip",
 };
 
 export async function GET(req: NextRequest) {

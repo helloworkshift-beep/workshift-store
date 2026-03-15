@@ -54,6 +54,54 @@ const STRIPE_PRODUCT_MAP: Record<string, { slug: string; name: string; emoji: st
     emoji: "🧑‍💼",
     startStep: "Open 02-job-descriptions-evp.md and rewrite your worst job description",
   },
+  "prod_U7mhDGCQK2PHTx": {
+    slug: "financial-advisor",
+    name: "Financial Advisor's AI Prompt Toolkit",
+    emoji: "💰",
+    startStep: "Open 02-client-communication-prompts.md and draft your first client report",
+  },
+  "prod_U7mhBuNrtIBzHZ": {
+    slug: "teacher",
+    name: "Teacher's AI Prompt Toolkit",
+    emoji: "📚",
+    startStep: "Open 02-lesson-planning-prompts.md and build your first lesson plan",
+  },
+  "prod_U7mhCXhz7l3i12": {
+    slug: "customer-success",
+    name: "Customer Success Manager's AI Prompt Toolkit",
+    emoji: "🤝",
+    startStep: "Open 02-onboarding-prompts.md and build your first onboarding sequence",
+  },
+  "prod_U7mhksHReOCfPX": {
+    slug: "business-owner",
+    name: "Business Owner's AI Prompt Toolkit",
+    emoji: "🏢",
+    startStep: "Open 02-client-proposal-prompts.md and write your first proposal",
+  },
+  "prod_U7mh8vAEleBi4u": {
+    slug: "mechanic",
+    name: "Auto Mechanic's AI Prompt Toolkit",
+    emoji: "🔧",
+    startStep: "Open 02-customer-communication-prompts.md and write your first service estimate",
+  },
+  "prod_U7mhiW12ElgJOV": {
+    slug: "contractor",
+    name: "Contractor's AI Prompt Toolkit",
+    emoji: "🏗️",
+    startStep: "Open 02-proposal-bidding-prompts.md and write your first project proposal",
+  },
+  "prod_U7mhPjC3HGpfMW": {
+    slug: "personal-trainer",
+    name: "Personal Trainer's AI Prompt Toolkit",
+    emoji: "💪",
+    startStep: "Open 02-program-design-prompts.md and build your first training program",
+  },
+  "prod_U7mhS5XJkF2wLl": {
+    slug: "restaurant-owner",
+    name: "Restaurant Owner's AI Prompt Toolkit",
+    emoji: "🍽️",
+    startStep: "Open 02-menu-marketing-prompts.md and write your first menu description",
+  },
 };
 
 function generateDownloadToken(sessionId: string): string {
