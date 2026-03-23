@@ -1,107 +1,126 @@
-# ChatGPT Prompts for Marketers: Campaigns, Copy, and Content That Converts
+# ChatGPT Prompts for Marketers: Campaigns, Copy, and Content Strategy
 
-Marketing runs on output. Campaign briefs, ad copy, email sequences, social posts, landing pages, blog articles, positioning docs, competitive analyses — the work never stops.
+Marketers are expected to do more with less. More channels, more content, faster turnaround, smaller teams.
 
-AI doesn't replace marketing judgment. But it eliminates the blank page, speeds up first drafts, and lets you move from strategy to execution without losing momentum.
+AI doesn't solve that problem entirely — but it removes the blank page. The right prompts turn a vague brief into a working first draft in minutes, leaving you time for the strategic work that actually requires a human.
 
-This guide covers practical ChatGPT prompts for the marketing tasks that eat up the most time.
+This guide covers practical ChatGPT prompts for the marketing tasks that eat the most time.
 
-## ChatGPT Prompts for Campaign Planning
+## ChatGPT Prompts for Campaign Briefs
 
-Great campaigns start with a clear strategy. AI can help you build the brief, map the funnel, and pressure-test your positioning before you spend a dollar.
+A good campaign brief is the foundation of everything. Getting AI to help you structure one forces clarity before execution.
 
 **Campaign brief prompt:**
 
-> Act as a senior marketing strategist. Write a campaign brief for a [B2B SaaS company launching a new project management feature]. Target audience: [mid-size tech companies, 50–500 employees, ops and project management buyers]. Goal: [generate 200 qualified demo requests in 60 days]. Include: campaign theme, key messages, channel mix recommendation, and 3 creative angles to test. Format as a structured brief.
+> Act as a senior brand strategist. Write a campaign brief for [a product launch for a B2B SaaS tool that helps HR teams automate onboarding]. Campaign goal: [drive 500 free trial signups in Q2]. Target audience: [HR managers and People Ops leads at companies with 50–500 employees]. Key message: [onboarding shouldn't take weeks — it should take hours]. Deliverables needed: [landing page, 3-email nurture sequence, LinkedIn ad copy, 1 blog post]. Tone: [clear, modern, slightly bold]. Format as a proper campaign brief with sections for objective, audience, message, and channels.
 
-**Go-to-market positioning prompt:**
+**Campaign positioning prompt:**
 
-> We're launching [a new AI writing tool for HR teams]. Our top competitors are [Jasper and Copy.ai]. Our differentiator: [built specifically for HR use cases — job descriptions, offer letters, performance reviews]. Write a positioning statement and 3 value proposition bullet points for use across the website and sales deck.
+> I'm launching [a premium skincare line targeting women 35–55 who are skeptical of clean beauty marketing]. Help me define the campaign positioning. Give me: a one-sentence positioning statement, three key messages, the emotional territory we should own, and two positioning angles we should avoid because they're overused. Be direct — no fluff.
 
-**Funnel content map prompt:**
+**Competitive differentiation prompt:**
 
-> Map out a content plan for a [TOFU → MOFU → BOFU] funnel for a [B2C fitness app targeting busy professionals]. For each stage, suggest: 2 content formats, 1 distribution channel, and 1 conversion goal. Output as a simple table.
+> I'm writing copy for [a project management tool competing with Asana and Monday.com]. Our differentiator is [it's built specifically for agencies, with client-facing views built in]. Help me articulate this in a way that's compelling without attacking competitors directly. Give me 3 alternative framings I could test.
 
-## AI Prompts for Email Marketing
+## AI Prompts for Ad Copy
 
-Email is still the highest-ROI channel — and most teams write the same email 10 different ways before settling on one. Let AI run the variants.
+Ad copy lives and dies by the hook. These prompts are designed to generate multiple angles you can test.
 
-**Welcome email sequence prompt:**
+**Facebook/Instagram ad prompt:**
 
-> Write a 3-email welcome sequence for new subscribers who signed up via a [free productivity guide download]. Brand: [a SaaS tool that helps remote teams manage async workflows]. Tone: warm, practical, not salesy. Email 1: welcome + deliver the guide. Email 2 (Day 3): one actionable tip from the guide. Email 3 (Day 7): introduce the product with a soft CTA. Max 200 words per email.
-
-**Promotional email prompt:**
-
-> Write a promotional email for [a 3-day flash sale — 25% off annual plans]. Product: [project management software for design agencies]. Audience: existing free users who haven't upgraded. Subject line options: give me 5. Body: create urgency without being desperate. Include one strong testimonial placeholder. Max 180 words.
-
-**Re-engagement email prompt:**
-
-> Write a re-engagement email for subscribers who haven't opened our emails in 90 days. Brand: [an online course platform for freelancers]. Goal: get them to either re-engage or self-select out. Subject line: pattern interrupt. Body: honest, human, no gimmicks. Include a clear yes/no CTA. Max 150 words.
-
-## ChatGPT Prompts for Ad Copy
-
-Writing ad copy is one of the highest-leverage uses of AI in marketing. Variations that used to take hours now take minutes.
-
-**Facebook/Instagram ad copy prompt:**
-
-> Write 3 Facebook ad copy variations for [a $97 online course on personal finance for millennials]. Each variation should use a different hook: 1) Pain-based, 2) Aspiration-based, 3) Curiosity-based. Include: primary text (max 125 characters), headline (max 40 characters), and description (max 30 characters). CTA: "Learn More."
+> Write 5 variations of Facebook ad copy for [a $97 online course teaching freelancers how to raise their rates]. Target audience: [freelancers earning under $50/hr who feel undervalued]. Each variation should lead with a different hook: one fear-based, one aspiration-based, one social proof angle, one curiosity angle, one direct offer. Each under 150 words. Include a CTA line.
 
 **Google search ad prompt:**
 
-> Write 5 headline options and 3 description options for a Google search ad. Product: [a local HVAC company offering AC installation and repair in Phoenix, AZ]. Target keyword: "AC installation Phoenix." Follow character limits: headlines max 30 chars, descriptions max 90 chars. Lead with a differentiator or offer.
+> Write 3 Google search ad headlines and 2 description lines for [a local accountant in Denver offering small business tax prep]. Max 30 characters per headline, 90 characters per description. Highlight: [fast turnaround, fixed pricing, local expertise]. Target search intent: [someone looking for small business tax accountant near me].
 
 **LinkedIn ad prompt:**
 
-> Write a LinkedIn Sponsored Content ad for [a B2B cybersecurity SaaS targeting CTOs and IT directors at companies with 200–1000 employees]. Product hook: [reduces time to detect security incidents by 60%]. Include: intro text (150 words max), headline (max 70 chars), CTA button suggestion. Tone: credible, direct, no fluff.
+> Write a LinkedIn Sponsored Content ad for [a cybersecurity company offering a free risk assessment to mid-market companies]. Target: [IT directors and CISOs at companies with 200–1,000 employees]. Hook: lead with a business risk angle, not a technical one. 150-word body copy + headline. CTA: Book a free assessment.
+
+### What Makes a Strong Ad Prompt?
+
+- Name the platform — copy behaves differently on Facebook vs. LinkedIn
+- Define the audience with specifics, not generics ("freelancers under $50/hr" not just "freelancers")
+- Ask for multiple angles so you can split-test
+- Specify word count so the output is immediately usable
+
+## ChatGPT Prompts for Email Marketing
+
+Email remains the highest-ROI channel for most businesses. These prompts cover the full funnel.
+
+**Welcome email prompt:**
+
+> Write a welcome email for new subscribers to [a newsletter about personal finance for people in their 30s]. Tone: [smart, warm, slightly irreverent — like a savvy friend, not a financial advisor]. Introduce what they'll get, set expectations for frequency, and give them one immediately useful piece of advice or insight so they feel the value straight away. Max 250 words. Subject line included.
+
+**Lead nurture sequence prompt:**
+
+> Write a 3-email nurture sequence for [leads who downloaded a free guide on "How to Cut Your SaaS Spend by 30%"]. Email 1 (Day 1): deliver the value and set expectations. Email 2 (Day 3): share one actionable tip they can use immediately, with a soft mention of our product. Email 3 (Day 7): social proof + direct CTA to book a demo. Each email max 200 words. Subject lines included.
+
+**Re-engagement email prompt:**
+
+> Write a re-engagement email for subscribers who haven't opened in 90 days. Product: [an e-commerce brand selling sustainable home goods]. Don't guilt them. Offer something — a discount, a curated pick, or a useful piece of content. Give them a clear reason to stay or an easy way to unsubscribe. Keep it honest and under 150 words.
+
+**Post-purchase email prompt:**
+
+> Write a post-purchase email for someone who just bought [a $200 standing desk mat]. Send 3 days after delivery. Goal: reduce returns, increase satisfaction, and plant a seed for a repeat purchase. Include: a tip for getting the most from the product, a gentle ask for a review, and a soft mention of a complementary product [ergonomic footrest]. Tone: helpful, not salesy. Max 200 words.
 
 ## AI Prompts for Social Media Content
 
-Consistency is the hardest part of social. AI makes it easier to batch-create content that actually sounds like your brand.
+Social content requires volume and variety. These prompts help you generate both faster.
+
+**LinkedIn thought leadership prompt:**
+
+> Write a LinkedIn post for [a marketing director at a B2B software company]. Topic: [why most B2B brands are too boring on LinkedIn and how to fix it]. Format: hook line, 4–6 short paragraphs, end with a question or provocation to drive comments. Tone: confident, slightly contrarian, no corporate speak. Max 300 words. No hashtag lists.
+
+**Instagram caption prompt:**
+
+> Write 3 Instagram caption variations for [a photo of a coffee shop workspace with a laptop and latte]. Brand: [a productivity app targeting remote workers]. Each caption should take a different angle: one aspirational, one relatable/humorous, one educational (productivity tip). Include 5 relevant hashtags at the end of each. Max 100 words per caption.
+
+**Twitter/X thread prompt:**
+
+> Write a 6-tweet thread about [the biggest mistakes brands make with email marketing]. Tweet 1 should be a hook that makes people want to keep reading. Tweets 2–5 should each cover one mistake with a brief explanation. Tweet 6 should be a CTA that points to [our email marketing course]. Keep each tweet under 280 characters. No filler phrases.
+
+## ChatGPT Prompts for Blog and SEO Content
+
+Long-form content builds organic traffic — but it takes time to write. AI accelerates the draft without replacing the strategy.
+
+**SEO blog post outline prompt:**
+
+> Create a detailed outline for a blog post targeting the keyword [best AI tools for small businesses]. Include: H1 title, meta description (under 155 characters), intro paragraph structure, 5–7 H2 sections with 2–3 bullet points each, and a conclusion with CTA. The article should answer search intent for someone comparing tools, not just listing them.
+
+**Blog intro prompt:**
+
+> Write 3 alternative opening paragraphs for a blog post about [how to write better product descriptions for e-commerce]. Each should use a different hook style: one starts with a statistic or claim, one starts with a relatable frustration, one starts with a bold contrarian statement. Max 80 words each.
+
+**Content repurposing prompt:**
+
+> I have a [1,500-word blog post about email open rates]. Help me repurpose it into: 1 LinkedIn post (250 words), 3 tweet variations (under 280 chars each), 1 email newsletter section (150 words), and 1 Instagram caption (100 words). Maintain the key insight but adapt the tone and format for each platform.
+
+## ChatGPT Prompts for Marketing Strategy
+
+These prompts help with the thinking work — positioning, messaging, planning.
+
+**Messaging hierarchy prompt:**
+
+> I'm building a messaging hierarchy for [a B2C fitness app targeting busy parents who want to exercise at home]. Give me: one headline (under 10 words), one value proposition (1–2 sentences), three supporting points with brief explanations, and two proof points I should try to gather. Format clearly.
 
 **Content calendar prompt:**
 
-> Create a 2-week LinkedIn content calendar for [a B2B SaaS company in the project management space]. Mix: 3 educational posts, 2 behind-the-scenes, 1 customer story, 1 hot take. For each post: provide a title/hook and 2-sentence summary of the angle. Output as a table with day, format, hook, and topic.
+> Create a 4-week content calendar for [a direct-to-consumer skincare brand targeting women 25–40]. Channels: Instagram (3x/week), LinkedIn (2x/week), email newsletter (1x/week). Mix of content types: educational, product-focused, user-generated, and lifestyle. Give me the topic/theme for each slot — not full copy. Format as a table.
 
-**Thread/carousel prompt:**
+**Go-to-market summary prompt:**
 
-> Write a LinkedIn carousel script on the topic: "5 reasons your email open rates are dropping (and what to do about each one)." Format: slide 1 = hook, slides 2-6 = one reason per slide with a fix, slide 7 = CTA. Keep each slide to 2-3 lines max. Punchy, not corporate.
+> Write a 1-page go-to-market summary for [a new project management tool for construction companies]. Include: target customer, core problem we solve, our positioning vs. alternatives, primary acquisition channels, launch milestones for 90 days, and one key metric to track success. Keep it sharp — max 400 words.
 
-**Brand voice refresh prompt:**
+---
 
-> Here are 3 examples of our current social copy: [paste examples]. Here's how we want to sound: [direct, a little edgy, smart without being pretentious — think Basecamp meets Notion]. Rewrite these 3 posts in our new voice.
+## The Shortcut: A Done-for-You Prompt Library
 
-## ChatGPT Prompts for Landing Pages and Website Copy
+Writing good prompts is a skill. Once you've figured out what works for your role, building a personal library of tested prompts is the move.
 
-Landing page copy is high-stakes. Every word either earns attention or loses it.
+The [Workshift Marketer's AI Prompt Toolkit](https://workshift.store/toolkits/marketing) is a collection of 100+ prompts built specifically for marketing professionals — covering campaign briefs, ad copy, email sequences, content strategy, brand messaging, and more. Each prompt uses [BRACKET] formatting so you can fill in your context and get professional output in under 8 minutes.
 
-**Hero section prompt:**
+One-time purchase. Works with ChatGPT, Claude, and Gemini.
 
-> Write hero section copy for a SaaS landing page. Product: [an AI tool that helps e-commerce brands automate their customer support]. Target buyer: [DTC brand founders and e-commerce ops managers]. Include: headline (max 10 words), sub-headline (max 25 words), and 3 benefit bullets. Tone: confident, no buzzwords. Lead with the outcome, not the feature.
-
-**Features section prompt:**
-
-> Write a features section for [a marketing analytics platform]. We have 4 core features: [unified dashboard, multi-channel attribution, AI-powered insights, and white-label reporting]. For each: write a feature name (3 words max), one-line benefit statement (under 15 words), and a 2-sentence description for the expanded view. Tone: clear, benefit-forward.
-
-**Testimonial request prompt:**
-
-> Write 3 testimonial request messages for different customer types: 1) A power user who's been with us 6+ months, 2) A customer who recently hit a milestone using our product, 3) A customer who was initially skeptical but came around. Each under 100 words. Warm, not transactional.
-
-## How to Get Better Output from AI for Marketing
-
-The gap between a mediocre AI prompt and a great one is specificity.
-
-**The prompting framework that works:**
-1. **Role** — "Act as a senior copywriter / performance marketer / strategist"
-2. **Context** — product, audience, channel, goal
-3. **Constraints** — word count, format, tone, what to avoid
-4. **Variants** — always ask for 3+ options; rarely will the first be the best
-
-The more context you give, the less editing you'll do. AI is a fast first-drafter — your job is the brief and the final polish.
-
-## Done-For-You Prompts for Marketers
-
-If you'd rather start with a complete library than build prompts one by one, the [Marketer's AI Prompt Toolkit](/toolkits/marketer-toolkit) includes 120+ ready-to-use prompts across every marketing function: campaigns, email, ads, social, content, SEO, and more.
-
-Fill in the brackets. Paste into ChatGPT. Ship.
-
-Built for marketers who want to move faster without sacrificing quality.
+[Browse the toolkit →](https://workshift.store/toolkits/marketing)
