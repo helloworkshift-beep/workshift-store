@@ -1,4 +1,6 @@
 import { MetadataRoute } from "next";
+import fs from "fs";
+import path from "path";
 
 const BASE = "https://workshift.store";
 
@@ -9,30 +11,25 @@ const toolkitSlugs = [
   "contractor", "personal-trainer", "restaurant-owner",
 ];
 
-const blogSlugs = [
-  "ai-replacing-knowledge-workers", "how-to-use-claude-for-work",
-  "context-engineering-guide", "claude-prompting-guide-professionals",
-  "workshift-ai-skills-knowledge-workers", "agentic-thinking-guide",
-  "claude-vs-chatgpt-for-work", "ai-skills-for-lawyers",
-  "how-to-train-team-on-ai", "90-day-ai-transformation",
-  "ai-prompts-real-estate-agents", "chatgpt-prompts-product-managers",
-  "ai-prompts-marketers", "ai-prompts-sales-reps", "chatgpt-prompts-hr-recruiters",
-  "ai-prompts-financial-advisors", "ai-prompts-teachers", "ai-prompts-customer-success",
-  "ai-prompts-contractors", "ai-prompts-mechanics", "ai-prompts-personal-trainers",
-  "ai-prompts-restaurant-owners", "best-ai-tools-small-business",
-  "how-to-write-better-ai-prompts", "ai-vs-copywriter",
-  "ai-prompts-electricians", "ai-prompts-nurses", "ai-prompts-accountants",
-  "ai-prompts-lawyers", "ai-prompts-consultants", "ai-prompts-architects",
-  "ai-prompts-freelancers", "ai-prompts-project-managers",
-  "ai-prompts-social-media-managers", "ai-prompts-coaches",
-  "ai-prompts-writers", "chatgpt-prompts-ux-designers",
-  "ai-prompts-operations-managers",
-];
+function getBlogSlugs(): string[] {
+  const blogDir = path.join(process.cwd(), "src/content/blog");
+  try {
+    return fs
+      .readdirSync(blogDir)
+      .filter((f) => f.endsWith(".md"))
+      .map((f) => f.replace(/\.md$/, ""));
+  } catch {
+    return [];
+  }
+}
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const blogSlugs = getBlogSlugs();
+
   return [
     { url: BASE, lastModified: new Date(), changeFrequency: "weekly", priority: 1.0 },
     { url: `${BASE}/toolkits`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.9 },
+    { url: `${BASE}/free`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
     { url: `${BASE}/course`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
     { url: `${BASE}/blog`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.8 },
     { url: `${BASE}/bundle`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.85 },
