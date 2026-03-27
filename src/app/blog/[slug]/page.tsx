@@ -1,4 +1,4 @@
-import { readFileSync, existsSync } from "fs";
+import { readFileSync, existsSync, readdirSync } from "fs";
 import { join } from "path";
 import { remark } from "remark";
 import remarkGfm from "remark-gfm";
@@ -239,6 +239,121 @@ const POST_META: Record<string, { title: string; excerpt: string; category: stri
     category: "Operations", readTime: "6 min",
     related: ["how-to-write-better-ai-prompts", "best-ai-tools-small-business"],
   },
+  // ── chatgpt-prompts series ──
+  "chatgpt-prompts-real-estate-agents": {
+    title: "ChatGPT Prompts for Real Estate Agents: Listings, Client Comms, and Marketing",
+    excerpt: "How real estate agents use ChatGPT to write MLS listings, follow-up emails, social content, and handle every stage of the client relationship.",
+    category: "By Profession", readTime: "9 min",
+    related: ["ai-prompts-real-estate-agents", "how-to-write-better-ai-prompts"],
+  },
+  "chatgpt-prompts-scrum-masters": {
+    title: "ChatGPT Prompts for Scrum Masters: Ceremonies, Stakeholders, and Team Health",
+    excerpt: "Structured AI prompts for Scrum Masters — retrospectives, sprint reviews, impediment logs, stakeholder updates, and coaching conversations.",
+    category: "By Profession", readTime: "9 min",
+    related: ["chatgpt-prompts-product-managers", "how-to-write-better-ai-prompts"],
+  },
+  "chatgpt-prompts-marketers": {
+    title: "ChatGPT Prompts for Marketers: Campaigns, Copy, and Content Strategy",
+    excerpt: "How marketers use ChatGPT for positioning, campaign briefs, email sequences, social content, and reporting — with structured prompt templates.",
+    category: "By Profession", readTime: "9 min",
+    related: ["ai-prompts-marketers", "how-to-write-better-ai-prompts"],
+  },
+  "chatgpt-prompts-sales-reps": {
+    title: "ChatGPT Prompts for Sales Reps: Prospecting, Objections, and Closing",
+    excerpt: "How sales reps use ChatGPT to write cold outreach, prepare for discovery calls, handle objections, and follow up more effectively.",
+    category: "By Profession", readTime: "9 min",
+    related: ["ai-prompts-sales-reps", "how-to-write-better-ai-prompts"],
+  },
+  "chatgpt-prompts-ux-researchers": {
+    title: "ChatGPT Prompts for UX Researchers: Discussion Guides, Synthesis, and Reports",
+    excerpt: "How UX researchers use ChatGPT to write discussion guides, screener surveys, affinity maps, research reports, and stakeholder presentations.",
+    category: "By Profession", readTime: "9 min",
+    related: ["chatgpt-prompts-ux-designers", "how-to-write-better-ai-prompts"],
+  },
+  "chatgpt-prompts-financial-advisors": {
+    title: "ChatGPT Prompts for Financial Advisors: Client Comms, Reviews, and Planning",
+    excerpt: "How financial advisors use ChatGPT to write client letters, quarterly reviews, planning summaries, and compliant marketing content.",
+    category: "By Profession", readTime: "9 min",
+    related: ["ai-prompts-financial-advisors", "how-to-write-better-ai-prompts"],
+  },
+  "chatgpt-prompts-teachers": {
+    title: "ChatGPT Prompts for Teachers: Lesson Plans, Assessments, and Parent Communication",
+    excerpt: "How teachers use ChatGPT to plan lessons, write assessments, draft parent emails, create rubrics, and generate differentiated materials.",
+    category: "By Profession", readTime: "9 min",
+    related: ["ai-prompts-teachers", "how-to-write-better-ai-prompts"],
+  },
+  "chatgpt-prompts-managers": {
+    title: "ChatGPT Prompts for Managers: Lead Better, Write Less",
+    excerpt: "How managers use ChatGPT for 1:1 agendas, performance reviews, team communications, OKR write-ups, and difficult conversations.",
+    category: "Leadership", readTime: "9 min",
+    related: ["how-to-train-team-on-ai", "how-to-write-better-ai-prompts"],
+  },
+  "chatgpt-prompts-executive-assistants": {
+    title: "ChatGPT Prompts for Executive Assistants: Do More in Less Time",
+    excerpt: "How executive assistants use ChatGPT to draft executive communications, manage schedules, prepare briefings, and handle complex logistics.",
+    category: "By Profession", readTime: "9 min",
+    related: ["how-to-write-better-ai-prompts", "workshift-ai-skills-knowledge-workers"],
+  },
+  "chatgpt-prompts-startup-founders": {
+    title: "ChatGPT Prompts for Startup Founders: Fundraising, GTM, Hiring, and Investor Comms",
+    excerpt: "How startup founders use ChatGPT for investor updates, cold outreach, hiring, go-to-market writing, and the communications work that never stops.",
+    category: "Startups", readTime: "10 min",
+    related: ["how-to-write-better-ai-prompts", "ai-replacing-knowledge-workers"],
+  },
+  "chatgpt-prompts-business-owners": {
+    title: "ChatGPT Prompts for Business Owners: Run Your Business Faster",
+    excerpt: "How small business owners use ChatGPT for operations, marketing, customer communication, hiring, and the daily writing work that eats their time.",
+    category: "By Profession", readTime: "9 min",
+    related: ["best-ai-tools-small-business", "how-to-write-better-ai-prompts"],
+  },
+  "chatgpt-prompts-customer-success-managers": {
+    title: "ChatGPT Prompts for Customer Success Managers: Retain More, Expand Faster",
+    excerpt: "How CSMs use ChatGPT for onboarding, QBRs, at-risk outreach, expansion conversations, and the communications that drive retention.",
+    category: "By Profession", readTime: "9 min",
+    related: ["ai-prompts-customer-success", "how-to-write-better-ai-prompts"],
+  },
+  "chatgpt-prompts-graphic-designers": {
+    title: "ChatGPT Prompts for Graphic Designers: Briefs, Proposals, and Client Communication",
+    excerpt: "How graphic designers use ChatGPT to write creative briefs, proposals, client feedback responses, portfolio copy, and project documentation.",
+    category: "Design & Creative", readTime: "8 min",
+    related: ["chatgpt-prompts-ux-designers", "how-to-write-better-ai-prompts"],
+  },
+  "chatgpt-prompts-event-planners": {
+    title: "ChatGPT Prompts for Event Planners: Proposals, Logistics, and Vendor Communication",
+    excerpt: "How event planners use ChatGPT to write event proposals, run-of-show documents, vendor briefs, client updates, and post-event reports.",
+    category: "By Profession", readTime: "8 min",
+    related: ["how-to-write-better-ai-prompts", "ai-prompts-project-managers"],
+  },
+  "chatgpt-prompts-customer-support": {
+    title: "ChatGPT Prompts for Customer Support: Faster Replies, Happier Customers",
+    excerpt: "How customer support teams use ChatGPT to write response templates, escalation scripts, FAQ docs, and training materials that improve CSAT.",
+    category: "By Profession", readTime: "8 min",
+    related: ["ai-prompts-customer-success", "how-to-write-better-ai-prompts"],
+  },
+  "chatgpt-prompts-data-analysts": {
+    title: "ChatGPT Prompts for Data Analysts: SQL, Reports, Stakeholder Comms, and Insight Narratives",
+    excerpt: "How data analysts use ChatGPT to write SQL queries, turn findings into narratives, communicate with stakeholders, and document their work.",
+    category: "Data & Analytics", readTime: "10 min",
+    related: ["how-to-write-better-ai-prompts", "context-engineering-guide"],
+  },
+  "chatgpt-prompts-insurance-agents": {
+    title: "ChatGPT Prompts for Insurance Agents: Proposals, Client Comms, Claims, and Marketing",
+    excerpt: "How insurance agents use ChatGPT to write proposals, explain coverage, handle claims communication, and market their practice.",
+    category: "By Profession", readTime: "9 min",
+    related: ["how-to-write-better-ai-prompts", "ai-prompts-financial-advisors"],
+  },
+  "chatgpt-prompts-job-seekers": {
+    title: "ChatGPT Prompts for Job Seekers: Cover Letters, Interview Prep, LinkedIn, and Salary Negotiation",
+    excerpt: "How job seekers use ChatGPT to write tailored cover letters, prepare for interviews, craft LinkedIn outreach, and negotiate offers.",
+    category: "Career", readTime: "10 min",
+    related: ["chatgpt-prompts-linkedin", "how-to-write-better-ai-prompts"],
+  },
+  "chatgpt-prompts-linkedin": {
+    title: "ChatGPT Prompts for LinkedIn: Profile, Posts, Outreach, and Thought Leadership",
+    excerpt: "How professionals use ChatGPT to optimize their LinkedIn profile, write posts that get engagement, craft outreach that gets replies, and build a consistent content strategy.",
+    category: "Social & Personal Brand", readTime: "10 min",
+    related: ["chatgpt-prompts-job-seekers", "how-to-write-better-ai-prompts"],
+  },
 };
 
 async function getPostContent(slug: string): Promise<string | null> {
@@ -255,13 +370,33 @@ async function getPostContent(slug: string): Promise<string | null> {
 }
 
 export async function generateStaticParams() {
-  return Object.keys(POST_META).map((slug) => ({ slug }));
+  const blogDir = join(process.cwd(), "src/content/blog");
+  try {
+    return readdirSync(blogDir)
+      .filter((f) => f.endsWith(".md"))
+      .map((f) => ({ slug: f.replace(/\.md$/, "") }));
+  } catch {
+    return Object.keys(POST_META).map((slug) => ({ slug }));
+  }
+}
+
+function getFallbackMeta(slug: string): { title: string; excerpt: string; category: string; readTime: string; related: string[] } {
+  // Derive a readable title from the slug
+  const title = slug
+    .replace(/-/g, " ")
+    .replace(/\b\w/g, (c) => c.toUpperCase());
+  return {
+    title,
+    excerpt: `AI prompt templates and strategies for ${title.toLowerCase()}.`,
+    category: "By Profession",
+    readTime: "8 min",
+    related: ["how-to-write-better-ai-prompts"],
+  };
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const meta = POST_META[slug];
-  if (!meta) return {};
+  const meta = POST_META[slug] ?? getFallbackMeta(slug);
   return {
     title: `${meta.title} | Workshift`,
     description: meta.excerpt,
@@ -270,8 +405,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 export default async function BlogPost({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const meta = POST_META[slug];
-  if (!meta) notFound();
+  const meta = POST_META[slug] ?? getFallbackMeta(slug);
 
   const content = await getPostContent(slug);
   if (!content) notFound();
