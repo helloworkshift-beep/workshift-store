@@ -102,6 +102,13 @@ const STRIPE_PRODUCT_MAP: Record<string, { slug: string; name: string; emoji: st
     emoji: "🍽️",
     startStep: "Open 02-menu-marketing-prompts.md and write your first menu description",
   },
+  "prod_UFS8BJpocxTOc7": {
+    slug: "bundle",
+    name: "The Complete Workshift Bundle — All 15 Toolkits",
+    emoji: "📦",
+    startStep: "You have all 15 toolkits — start with whichever role you need most today",
+    type: "bundle",
+  },
 };
 
 function generateDownloadToken(sessionId: string): string {

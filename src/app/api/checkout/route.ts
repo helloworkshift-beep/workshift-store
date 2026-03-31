@@ -20,6 +20,8 @@ const PRICE_MAP: Record<string, string> = {
   "contractor-toolkit":         "price_1T9X8MRJBoE9Jl8eOHH03PVM",
   "personal-trainer-toolkit":   "price_1T9X8NRJBoE9Jl8euxERt0DD",
   "restaurant-owner-toolkit":   "price_1T9X8ORJBoE9Jl8etVlvLtZ9",
+  // Bundle
+  "bundle":                     "price_1TGxEgRJBoE9Jl8es13jPyT8",
   // Course
   "course":                     "price_1T7NEjRJBoE9Jl8ehCYrKoRs",
 };
@@ -42,7 +44,7 @@ export async function GET(request: NextRequest) {
     line_items: [{ price: PRICE_MAP[product], quantity: 1 }],
     allow_promotion_codes: true,
     success_url: `${baseUrl}/thank-you?session_id={CHECKOUT_SESSION_ID}`,
-    cancel_url: `${baseUrl}/${product === "course" ? "course" : "toolkits"}`,
+    cancel_url: `${baseUrl}/${product === "course" ? "course" : product === "bundle" ? "bundle" : "toolkits"}`,
   });
 
   return NextResponse.redirect(session.url!);
