@@ -33,6 +33,8 @@ const productMap: Record<string, string> = {
   "contractor": "contractor-toolkit.zip",
   "personal-trainer": "personal-trainer-toolkit.zip",
   "restaurant-owner": "restaurant-owner-toolkit.zip",
+  // Bundle
+  "bundle": "bundle.zip",
 };
 
 export async function GET(req: NextRequest) {

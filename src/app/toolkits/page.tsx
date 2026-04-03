@@ -241,13 +241,15 @@ export default function Toolkits() {
           </div>
 
           {/* Bundle teaser */}
-          <div className="mt-8 rounded-xl bg-[#0a2540] p-8 text-center">
-            <h2 className="text-xl font-bold text-white mb-2">Complete Bundle</h2>
+          <Link href="/bundle" className="mt-8 rounded-xl bg-[#0a2540] p-8 text-center block hover:bg-[#0d2d4f] transition-colors group">
+            <h2 className="text-xl font-bold text-white mb-2">Complete Bundle — All 15 Toolkits</h2>
             <p className="text-[#8898aa] mb-4 max-w-lg mx-auto text-sm">
-              All 15 toolkits at a significant discount. Every role, every workflow covered.
+              850+ prompts, every role covered. Save 88% vs buying individually.
             </p>
-            <Badge variant="purple">Coming soon</Badge>
-          </div>
+            <span className="inline-block bg-[#635bff] text-white text-sm font-semibold px-6 py-2.5 rounded-lg group-hover:bg-[#5145e5] transition-colors">
+              Get the bundle — $97 →
+            </span>
+          </Link>
         </Container>
       </Section>
 
